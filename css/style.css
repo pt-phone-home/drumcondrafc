@@ -47,22 +47,60 @@ body {
 .welcome {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 3fr 40px 1fr;
   background-color: blue; }
   .welcome-heading {
+    grid-column: 1 / -1;
     align-self: center;
     justify-self: center;
     font-size: 12rem;
+    color: yellow;
+    text-shadow: 3px 4px 5px #969696; }
+  .welcome-oneClub {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    align-self: center;
+    justify-self: center;
+    font-size: 3.5rem;
     color: yellow; }
   .welcome-ball {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
     align-self: center;
     justify-self: center;
     font-size: 25rem;
+    color: yellow;
+    animation: animateball 1s ease-out; }
+  .welcome-oneCommunity {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    align-self: center;
+    justify-self: center;
+    padding-right: 3rem;
+    font-size: 3.5rem;
     color: yellow; }
   .welcome-link {
-    color: yellow;
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    color: black;
+    font-size: 1.4rem;
     justify-self: center;
     background-color: yellow;
-    width: 15rem;
-    border-radius: 10%; }
+    width: 12rem;
+    border-radius: 10%;
+    padding: 1.2rem 2rem 1rem 2.5rem;
+    text-decoration: none;
+    font-family: inherit;
+    transition: all .3s ease-in-out;
+    box-shadow: 4px 7px 5px -1px rgba(0, 0, 0, 0.71); }
+    .welcome-link:hover {
+      transform: translateY(-5px); }
+    .welcome-link:active {
+      transform: translateY(2px); }
+
+@keyframes animateball {
+  0% {
+    transform: scale(0.1) rotate(-360deg); }
+  100% {
+    transform: scale(1) rotate(0deg); } }
