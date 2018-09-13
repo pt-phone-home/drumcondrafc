@@ -1,0 +1,57 @@
+// Variables 
+/*
+$background-main: rgba(55, 255, 255, .8);
+
+$color-primary-dark: rgb(204, 150, 95);
+$color-primary-light: rgba(218, 186, 154, 0.199);
+$color-primary-lightest: rgba(218, 186, 154, 0.103);
+$box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+$box-shadow-light: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+// $text-color-primary: rgb(76, 23, 122);
+$text-color-primary: rgb(30, 107, 47);
+$text-shadow-light: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+*/
+
+// $text-color-primary:black;
+// $text-color-secondary: rgb(255, 66, 18);
+// $background-grey: rgb(239, 239, 245);
+
+
+*, 
+*::before, 
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+
+html {
+	font-size: 65%;
+	
+	@media (max-width: 1250px) {
+		font-size: 62.5%;
+	}
+
+	@media (max-width: 1000px) {
+		font-size: 60%;
+	}
+
+	@media (max-width: 520px) {
+		font-size: 55%;
+	}
+
+	@media (max-width: 480px) {
+		font-size: 50%;
+	}
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	line-height: 1.2;
+	color: black;
+	box-sizing: border-box;
+}
+
+

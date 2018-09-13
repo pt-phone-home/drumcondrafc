@@ -1,0 +1,35 @@
+.index-container {
+    display: grid;
+    grid-template-columns: 20rem repeat(10, 1fr) 20rem;
+    min-height: 100vh;
+}
+
+.welcome {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    background-color: blue;
+
+    &-heading {
+        align-self: center;
+        justify-self: center;
+        font-size: 12rem;
+        color: yellow;
+    }
+
+    &-ball {
+        align-self: center;
+        justify-self: center;
+        font-size: 25rem;
+        color: yellow;
+    }
+
+    &-link {
+        color: yellow;
+        justify-self: center;
+        background-color: yellow;
+        width: 15rem;
+        border-radius: 10%;
+    }
+}
