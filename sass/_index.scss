@@ -4,12 +4,33 @@
     min-height: 100vh;
 }
 
+.container-background {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-template-rows: repeat(5, 1fr);
+
+   &-box:nth-child(odd) {
+       background-color: rgb(0, 0, 255);
+       z-index: 1;
+   }
+
+   &-box:nth-child(even) {
+    background-color: rgba(0, 0, 255, .8);   
+    
+   }
+}
+
 .welcome {
     grid-column: 1 / -1;
+    grid-row: 1 / 2;
     display: grid;
+    z-index: 2;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr 3fr 40px 1fr;
-    background-color: blue;
+    // background-color: blue;
 
     &-heading {
         grid-column: 1 / -1;
