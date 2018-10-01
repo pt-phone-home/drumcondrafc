@@ -12,13 +12,36 @@
 <body>
     
     <div class="home-container">
-    <?php include 'banner.php';
-    ?>
+        <?php include 'banner.php';
+        ?>
 
-    <?php include 'nav-bar.php';
-    ?>
+        <?php include 'nav-bar.php';
+        ?>
         
-    </div>
+        <section class="news_and_fixtures">
     
+            <div class="news_and_fixtures-news">
+            </div>
+
+            <div class="news_and_fixtures-fixtures">
+            </div>
+
+        </section>
+
+        <section class="news_and_ads">
+            <div class="news_and_ads-news">
+            </div>
+            <div class="news_and_ads-ads">
+            </div>
+        
+        </section>
+
+        <?php include 'footer.php'; 
+        ?>
+
+
+
+
+    </div>
 </body>
 </html>

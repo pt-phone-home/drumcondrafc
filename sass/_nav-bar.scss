@@ -15,16 +15,8 @@
             text-decoration: none;
             color: darkgray;
 
-            &:visited {
-                color: yellow;
-            }
-    
-            &:active {
-                color: blue;
-            }
-
             &:hover {
-                color: white;
+                color: blue;
             }
         }
 

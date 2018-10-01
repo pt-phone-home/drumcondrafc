@@ -1,6 +1,6 @@
 .home-container {
     display: grid;
-    grid-template-columns: 20rem repeat(10, 1fr) 20rem;
+    grid-template-columns: 15rem repeat(10, 1fr) 15rem;
 }
 
 .banner {
@@ -64,3 +64,44 @@
     }
 }
 
+.news_and_fixtures {
+    grid-column: 2 / 12;
+    border: 1px solid #000;
+    height: 40rem;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    &-news {
+        grid-column: 1 / 2;
+        border: 1px solid red;
+    }
+
+    &-fixtures {
+        grid-column: 2 / 3;
+        border: 1px solid blue;
+    }
+}
+
+.news_and_ads {
+    grid-column: 2 / 12;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    height: 40rem;
+    border: 1px solid #000;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    &-news {
+        grid-column: 1 / 2;
+        border: 1px solid red;
+    }
+
+    &-ads {
+        grid-column: 2 / 3;
+        border: 1px solid blue;
+    }
+
+
+}
