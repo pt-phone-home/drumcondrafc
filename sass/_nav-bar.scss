@@ -3,6 +3,8 @@
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     height: 7rem;
+    position: sticky;
+    top: 0;
     align-items: center;
     justify-items: center;
     background-color: white;
