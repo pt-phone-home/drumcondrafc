@@ -1,0 +1,34 @@
+.main-nav {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    height: 7rem;
+    align-items: center;
+    justify-items: center;
+    background-color: white;
+
+    &-item {
+        list-style: none;
+
+        &-link {
+            font-size: 1.6rem;
+            text-decoration: none;
+            color: darkgray;
+
+            &:visited {
+                color: yellow;
+            }
+    
+            &:active {
+                color: blue;
+            }
+
+            &:hover {
+                color: white;
+            }
+        }
+
+    }
+
+   
+}

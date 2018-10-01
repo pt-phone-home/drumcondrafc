@@ -124,8 +124,9 @@ body {
 
 .banner {
   grid-column: 1 / -1;
+  grid-row: 1 / 2;
   border: 1px solid #000;
-  height: 15rem;
+  height: 20rem;
   display: grid;
   grid-template-columns: 1fr 4fr 2fr; }
   .banner-image {
@@ -135,11 +136,14 @@ body {
     padding-left: 3rem; }
   .banner-title {
     grid-column: 2 / 3;
+    grid-row: 1/ 2;
+    z-index: 2;
     display: grid;
-    grid-template-rows: 2fr 1fr; }
+    grid-template-rows: 2fr 1fr;
+    padding-left: 3rem; }
     .banner-title-head {
       color: yellow;
-      font-size: 4rem;
+      font-size: 6rem;
       text-transform: uppercase;
       align-self: center; }
     .banner-title-subtitle {
@@ -147,13 +151,34 @@ body {
       font-size: 2rem;
       text-transform: uppercase;
       align-self: center; }
+  .banner-background {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); }
+    .banner-background-item:nth-child(odd) {
+      background-color: blue; }
+    .banner-background-item:nth-child(even) {
+      background-color: rgba(0, 0, 255, 0.8); }
 
-.banner-background {
+.main-nav {
   grid-column: 1 / -1;
-  grid-row: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(6, 1fr); }
-  .banner-background-item:nth-child(odd) {
-    background-color: blue; }
-  .banner-background-item:nth-child(even) {
-    background-color: rgba(0, 0, 255, 0.8); }
+  grid-template-columns: repeat(8, 1fr);
+  height: 7rem;
+  align-items: center;
+  justify-items: center;
+  background-color: white; }
+  .main-nav-item {
+    list-style: none; }
+    .main-nav-item-link {
+      font-size: 1.6rem;
+      text-decoration: none;
+      color: darkgray; }
+      .main-nav-item-link:visited {
+        color: yellow; }
+      .main-nav-item-link:active {
+        color: blue; }
+      .main-nav-item-link:hover {
+        color: white; }

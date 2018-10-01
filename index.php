@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,600,700" rel="stylesheet">
+    
 
 </head>
 <body>
@@ -34,7 +35,7 @@
           <h2 class="welcome-oneClub">One Club</h2>
         <i class="fas fa-futbol welcome-ball"></i>
         <h2 class="welcome-oneCommunity">One Community</h2>
-        <a href="home.html" class="welcome-link">Enter Site</a>
+        <a href="home.php" class="welcome-link">Enter Site</a>
       </div>
         
 
@@ -46,6 +47,7 @@
 
         
     </div>
+
     
 </body>
 </html>
