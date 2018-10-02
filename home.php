@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,600,700" rel="stylesheet">
+    
+
 
 </head>
 <body>
@@ -20,7 +22,14 @@
         
         <section class="news_and_fixtures">
     
-            <div class="news_and_fixtures-news">
+            <div class="news_and_fixtures-news" id="slider">
+                <figure>
+                <img src="img/soccer-1.jpg" alt="">
+                <img src="img/soccer-2.jpg" alt="">
+                <img src="img/soccer-3.jpg" alt="">
+                </figure>
+
+
             </div>
 
             <div class="news_and_fixtures-fixtures">
@@ -36,6 +45,8 @@
         
         </section>
 
+        
+
         <?php include 'footer.php'; 
         ?>
 
@@ -43,5 +54,7 @@
 
 
     </div>
+    
+
 </body>
 </html>
