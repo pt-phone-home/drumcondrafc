@@ -230,6 +230,7 @@ body {
   height: 7rem;
   position: sticky;
   top: 0;
+  z-index: 10;
   align-items: center;
   justify-items: center;
   background-color: white; }
