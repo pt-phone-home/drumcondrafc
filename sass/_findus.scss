@@ -1,0 +1,78 @@
+.findus-container {
+    display: grid;
+    grid-template-columns: 7rem repeat(10, 1fr) 7rem;
+    grid-template-rows: auto;
+  }
+
+  .findus-header {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+    background: $color-navy;
+    height: 32rem;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 4rem;
+      color: $color-yellow;
+    }
+
+    i {
+      font-size: 20rem;
+      color: $color-yellow;
+    }
+  }
+
+  .locations {
+    grid-column: 2 / 12;
+    padding: 2rem;
+    border: 1px solid #000;
+    height: 80rem;
+    margin-bottom: 2rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: .5fr repeat(3, 1fr);
+
+    &-intro {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+    }
+
+    &-loc1 {
+      border: 1px solid #000;
+      display: grid;
+      grid-template: 2fr 1fr;
+      
+    }
+
+    &-loc2 {
+      border: 1px solid #000;
+    }
+
+    &-loc3 {
+      border: 1px solid #000;
+    }
+
+    &-loc4 {
+      border: 1px solid #000;
+    }
+
+    &-loc5 {
+      border: 1px solid #000;
+    }
+  }
+
+  #map1 {
+    width: 10rem;
+    height: 10rem;
+  }
+
+
+  #map2 {
+    width: 10rem;
+    height: 10rem;
+  }
+

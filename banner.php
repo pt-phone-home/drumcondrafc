@@ -1,10 +1,13 @@
        <div class="banner">
-            
-           <a href="home.html"><img src="img/chrest.gif" alt="" class="banner-image"></a>
 
+           <div class="banner-club">
+               - One Club -
+           </div>
            <div class="banner-title">
-               <div class="banner-title-head">Drumcondra a.f.c</div>
-               <div class="banner-title-subtitle">one club - one community</div>
+              Drumcondra a.f.c
+           </div>
+           <div class="banner-community">
+               - One Community -
            </div>
        </div> 
 
@@ -12,5 +15,5 @@
                 <div class="banner-background-item"></div><div class="banner-background-item"></div>
                 <div class="banner-background-item"></div><div class="banner-background-item"></div>
                 <div class="banner-background-item"></div><div class="banner-background-item"></div>
-            </div>
+        </div>
        

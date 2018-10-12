@@ -1,8 +1,10 @@
 .footer {
     grid-column: 1 / -1;
-    background-color: lightblue;
-    min-height: 20rem;
+    grid-row: 6 / 7;
+    background-color: $color-navy;
+    min-height: 5rem;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 4fr 1fr;
 }

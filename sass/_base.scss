@@ -6,6 +6,7 @@ $color-primary-dark: rgb(204, 150, 95);
 $color-primary-light: rgba(218, 186, 154, 0.199);
 $color-primary-lightest: rgba(218, 186, 154, 0.103);
 $box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+
 $box-shadow-light: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
 // $text-color-primary: rgb(76, 23, 122);
 $text-color-primary: rgb(30, 107, 47);
@@ -16,6 +17,10 @@ $text-shadow-light: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
 // $text-color-secondary: rgb(255, 66, 18);
 // $background-grey: rgb(239, 239, 245);
 
+$background-color-light: rgb(242, 236, 236);
+$box-shadow-light: 6px 6px 5px -2px rgba(0,0,0,0.18);
+$color-yellow: rgb(249, 236, 55);
+$color-navy: rgb(42, 48, 117);
 
 *, 
 *::before, 

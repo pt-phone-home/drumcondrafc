@@ -6,5 +6,5 @@
     <li class="main-nav-item"><a href="#" class="main-nav-item-link">Membership</a></li>
     <li class="main-nav-item"><a href="#" class="main-nav-item-link">Managers</a></li>
     <li class="main-nav-item"><a href="#" class="main-nav-item-link">Gallery</a></li>
-    <li class="main-nav-item"><a href="#" class="main-nav-item-link btn blue darken-2 white-text">Contact</a></li>
+    <li class="main-nav-item"><a href="#" class="main-nav-item-link">Contact</a></li>
 </ul>
