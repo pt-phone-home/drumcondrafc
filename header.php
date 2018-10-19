@@ -6,9 +6,14 @@
                 <a href="#">News</a>
             </div>
         </li>
-        <li><a href="about.php">About Us</a></li>
+        <li class="dropdown">
+            <a href="about.php" class="dropbtn">About Us</a>
+            <div class="dropdown-content">
+                <a href="about.php#teams">Teams & Managers</a>
+            </div>
+        </li>
         <li><a href="findus.php">Find Us</a></li>
-        <li><a href="#">Fixtures</a></li>
+        <li><a href="fixtures.php">Fixtures</a></li>
     </div>
 
     <div class="logo">
@@ -16,9 +21,9 @@
     </div>
 
     <div class="nav2">
-    <li><a href="#">Membership</a></li>
-    <li><a href="#">Managers</a></li>
-    <li><a href="#">Gallery</a></li>
+    <li><a href="#">Results</a></li>
+    <li><a href="members.php">Members</a></li>
+    <li><a href="gallery.php">Gallery</a></li>
     <li><a href="#">Contact</a></li>
     </div>
 

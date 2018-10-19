@@ -1,122 +1,118 @@
 .header {
-    grid-column: 1 / -1; 
-    grid-row: 2 / 3;
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  min-height: 7rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  align-items: center;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+
+  .nav1 {
     display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
-    min-height: 7rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    align-items: center;
-    padding-left: 2rem;
-    margin-bottom: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 1.3rem;
 
-    .nav1 {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        font-size: 1.4rem;
+    li {
+      list-style: none;
+      padding-bottom: 20px;
 
-        li {
-            list-style: none;
-            padding-bottom: 20px;
-
-            &:hover {
-                border-bottom: 1px solid $color-yellow;
-                padding-bottom: 19px;
-            }
-        }
-
-        a {
-            text-decoration: none;
-            color: white;
-            text-transform: uppercase;
-            padding: 1.5rem;
-            height: 100%;
-            width: 100%;
-        }
-
-        a:hover {
-            color: $color-yellow;
-        }
-
+      &:hover {
+        border-bottom: 1px solid $color-yellow;
+        padding-bottom: 19px;
+      }
     }
 
-    .logo {
-        position: relative;
-
-        img {
-            position: absolute;
-            height: 13rem;
-            width: 11rem;
-            left: 72px;
-            top:-6rem;
-        }
-        
+    a {
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      padding: 1.5rem;
+      height: 100%;
+      width: 100%;
     }
 
-    .nav2 {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); 
-        font-size: 1.4rem; 
-
-        li {
-            list-style: none;
-            padding-bottom: 20px;
-
-            &:hover {
-                border-bottom: 1px solid $color-yellow;
-                padding-bottom: 19px;
-            }
-        }
-
-        a {
-            text-decoration: none;
-            color: white;
-            text-transform: uppercase;
-            padding: 1.5rem;
-            height: 100%;
-            width: 100%;
-        }
-
-        a:hover {
-            color: $color-yellow;
-        }
+    a:hover {
+      color: $color-yellow;
     }
+  }
+
+  .logo {
+    position: relative;
+
+    img {
+      position: absolute;
+      height: 13rem;
+      width: 11rem;
+      left: 72px;
+      top: -6rem;
+    }
+  }
+
+  .nav2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 1.3rem;
+
+    li {
+      list-style: none;
+      padding-bottom: 20px;
+
+      &:hover {
+        border-bottom: 1px solid $color-yellow;
+        padding-bottom: 19px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      padding: 1.5rem;
+      height: 100%;
+      width: 100%;
+    }
+
+    a:hover {
+      color: $color-yellow;
+    }
+  }
 }
 // Drop Down Buttons
 
 .dropdown {
-    position: relative;
+  position: relative;
 
-    &:hover .dropdown-content {
-        display: block;
-        transition: display 2s ease-in-out;
-
-    }
+  &:hover .dropdown-content {
+    display: block;
+    transition: display 2s ease-in-out;
+  }
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    width: 15rem;
-    top: 38px;
-    left: -15px;
-    background: lighten($color: $color-navy, $amount: 5%);
+  display: none;
+  position: absolute;
+  width: 15rem;
+  top: 38px;
+  left: -15px;
+  background: lighten($color: $color-navy, $amount: 5%);
 
-    a {
-        padding: .7rem;
-        padding-right: 2rem;
-        display: inline-block;
-        width: 100%;
-       
+  a {
+    padding: 0.7rem;
+    padding-right: 2rem;
+    display: inline-block;
+    width: 100%;
 
-        &:hover {
-            background: lighten($color: $color-navy, $amount: 10%);
-            color: $color-yellow;
-        }
-
-        &:active {
-            background: darken($color: $color-navy, $amount: 10%);
-        }
+    &:hover {
+      background: lighten($color: $color-navy, $amount: 10%);
+      color: $color-yellow;
     }
+
+    &:active {
+      background: darken($color: $color-navy, $amount: 10%);
+    }
+  }
 }

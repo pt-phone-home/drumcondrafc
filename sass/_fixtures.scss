@@ -1,0 +1,12 @@
+.fixtures-container {
+  display: grid;
+  grid-template-columns: 7rem repeat(10, 1fr) 7rem;
+  grid-template-rows: auto;
+}
+
+.fixtures {
+  grid-column: 2 / 12;
+  border: 1px solid #000;
+  height: 30rem;
+  margin-bottom: 1rem;
+}
