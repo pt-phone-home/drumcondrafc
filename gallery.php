@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-    <?php include 'head.php';
+    <?php include 'components/head.php';
     ?>
     <title>Gallery - Drumcondra A.F.C</title>
 </head>
@@ -8,9 +8,14 @@
     
     <div class="gallery-container">
     
-        <?php include 'banner.php'; ?>
+        <?php include 'components/banner.php'; ?>
 
-        <?php include 'header.php'; ?>
+        <?php include 'components/header.php'; ?>
+
+        <div class="gallery-intro">
+            <h1>Image Gallery</h1>
+            <i class="fas fa-images"></i>
+        </div>
 
         <div class="gallery">
 
@@ -61,7 +66,7 @@
 
         
 
-        <?php include 'footer.php'; ?>
+        <?php include 'components/footer.php'; ?>
     </div>
     
   

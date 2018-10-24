@@ -19,12 +19,13 @@
     <div class="logo">
         <img src="img/logo.png" alt="">
     </div>
+    <div class="break"></div>
 
     <div class="nav2">
     <li><a href="#">Results</a></li>
     <li><a href="members.php">Members</a></li>
     <li><a href="gallery.php">Gallery</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a href="contact.php">Contact</a></li>
     </div>
 
 </div>

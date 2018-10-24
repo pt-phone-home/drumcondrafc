@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-    <?php include 'head.php';
+    <?php include 'components/head.php';
     ?>
     <title>Welcome To Drumcondra FC: One Club - One Community</title>
 </head>
@@ -8,9 +8,9 @@
     
     <div class="about-container">
     
-    <?php include 'banner.php'; ?>
+    <?php include 'components/banner.php'; ?>
 
-    <?php include 'header.php'; ?>
+    <?php include 'components/header.php'; ?>
 
     <section class="about-header">
         <h1>Drums in Drumcondra</h1>
@@ -134,7 +134,7 @@
 
 
         
-<?php include 'footer.php'; ?>
+<?php include 'components/footer.php'; ?>
         
 
 

@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-    <?php include 'head.php';
+    <?php include 'components/head.php';
     ?>
     <title>Fixtures - Drumcondra A.F.C</title>
 </head>
@@ -8,9 +8,9 @@
     
     <div class="fixtures-container">
     
-        <?php include 'banner.php'; ?>
+        <?php include 'components/banner.php'; ?>
 
-        <?php include 'header.php'; ?>
+        <?php include 'components/header.php'; ?>
 
         <div class="fixtures">
         
@@ -20,7 +20,7 @@
         
         </div>
 
-        <?php include 'footer.php'; ?>
+        <?php include 'components/footer.php'; ?>
     </div>
     
   

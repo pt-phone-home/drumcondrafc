@@ -1,3 +1,7 @@
+body {
+  position: relative;
+}
+
 .header {
   grid-column: 1 / -1;
   grid-row: 2 / 3;
@@ -10,6 +14,7 @@
   align-items: center;
   padding-left: 2rem;
   margin-bottom: 1rem;
+  // position: relative;
 
   .nav1 {
     display: grid;
@@ -40,15 +45,23 @@
     }
   }
 
+  .break {
+    content: "";
+  }
+
   .logo {
-    position: relative;
+    position: absolute;
+    left: 46%;
+    top: -2rem;
 
     img {
-      position: absolute;
+      // position: absolute;
       height: 13rem;
       width: 11rem;
-      left: 72px;
-      top: -6rem;
+
+      @media (max-width: 1050px) {
+        left: -200%;
+      }
     }
   }
 

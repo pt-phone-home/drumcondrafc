@@ -1,0 +1,91 @@
+.contact-container {
+  display: grid;
+  grid-template-columns: 7rem repeat(10, 1fr) 7rem;
+  grid-template-rows: auto;
+}
+
+.contact-header {
+  grid-column: 1 / -1;
+  display: grid;
+  height: 25rem;
+  background-color: $color-navy;
+  margin-bottom: 1rem;
+
+  h1 {
+    grid-column: 1 / -1;
+    text-transform: capitalize;
+    justify-self: center;
+    align-self: center;
+    color: $color-yellow;
+    font-size: 4rem;
+  }
+
+  i {
+    font-size: 11rem;
+    color: $color-yellow;
+    align-self: center;
+    justify-self: center;
+  }
+}
+
+.contact-info {
+  grid-column: 2 / 12;
+  height: auto;
+  padding: 2rem;
+  margin-bottom: 2rem;
+
+  display: grid;
+  grid-template-columns: 3fr 1.5fr;
+
+  &-form {
+    grid-column: 1 / 2;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0rem 2rem;
+
+    &-container {
+      grid-column: 1 / -1;
+      justify-self: center;
+      width: 90%;
+      border: 2px solid $color-primary;
+      box-shadow: $box-shadow-light;
+
+      h1 {
+        font-size: 3rem;
+        background-color: $color-primary;
+        color: $color-secondary;
+        padding: 1.5rem 1rem;
+      }
+    }
+  }
+
+  &-contact {
+    grid-column: 2 / 3;
+
+    h1 {
+      font-size: 3rem;
+      background-color: $color-primary;
+      color: $color-secondary;
+      padding: 1.5rem 1rem;
+    }
+
+    h4 {
+      margin-top: 3rem;
+      font-size: 2rem;
+      padding-left: 2rem;
+    }
+  }
+}
+
+.member {
+  display: grid;
+  grid-template-columns: 0.75fr 1fr 1fr;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 4rem;
+
+  img {
+    margin-left: 1rem;
+  }
+}

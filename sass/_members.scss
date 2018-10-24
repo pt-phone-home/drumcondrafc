@@ -30,14 +30,13 @@
 
 .members-sections {
   grid-column: 2 / 12;
-  height: 50rem;
-  border: 1px solid #000;
+  height: auto;
   margin-bottom: 1rem;
   padding: 2rem;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
+  grid-gap: 2rem;
 
   &-data {
     display: grid;
@@ -62,7 +61,7 @@
     }
 
     &-body {
-      padding: 1rem;
+      padding: 2rem 1.5rem;
 
       p {
         font-size: 1.5rem;
@@ -95,7 +94,7 @@
     }
 
     &-body {
-      padding: 1rem;
+      padding: 2rem 1.5rem;
 
       p {
         font-size: 1.5rem;
@@ -106,10 +105,212 @@
   }
 
   &-forms {
-    border: 1px solid #000;
+    display: grid;
+    grid-template-rows: 0.75fr 2fr;
+    box-shadow: $box-shadow-light;
+
+    &-heading {
+      background-color: $color-navy;
+      color: $color-yellow;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+
+      h2 {
+        font-size: 3rem;
+      }
+
+      i {
+        font-size: 3rem;
+      }
+    }
+
+    &-body {
+      padding: 2rem 1.5rem;
+
+      p {
+        font-size: 1.5rem;
+        color: $color-navy;
+        line-height: 1.3;
+      }
+
+      i {
+        font-size: 2rem;
+      }
+    }
   }
 
   &-payment {
+    display: grid;
+    grid-template-rows: 0.75fr 2fr;
+    box-shadow: $box-shadow-light;
+
+    &-heading {
+      background-color: $color-navy;
+      color: $color-yellow;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+
+      h2 {
+        font-size: 3rem;
+      }
+
+      i {
+        font-size: 3rem;
+      }
+    }
+
+    &-body {
+      padding: 2rem 1.5rem;
+
+      p {
+        font-size: 1.5rem;
+        color: $color-navy;
+        line-height: 1.3;
+      }
+    }
+  }
+}
+
+.data-modal {
+  display: none;
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(black, 0.9);
+
+  &-header {
+    background-color: $color-primary;
+    padding: 2rem 1rem;
+
+    h1 {
+      color: $color-yellow;
+    }
+  }
+
+  &-content {
+    background-color: #f4f4f4;
+    margin: 7% auto;
+    padding: 2rem;
     border: 1px solid #000;
+    width: 70%;
+    box-shadow: $box-shadow-light;
+    overflow: scroll;
+
+    h2 {
+      font-size: 1.6rem;
+      color: $color-primary;
+      padding: 2rem 1rem;
+      text-decoration: underline;
+    }
+
+    p {
+      font-size: 1.4rem;
+      padding: 2rem 1rem;
+    }
+
+    li {
+      font-size: 1.3rem;
+      padding: 1rem 0.5rem;
+      margin-left: 1rem;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      color: $color-primary;
+      padding: 2rem 1rem;
+      text-decoration: underline;
+    }
+  }
+}
+
+.data-close {
+  color: $color-yellow;
+  float: right;
+  font-size: 2.8rem;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    color: darken($color: $color-yellow, $amount: 20%);
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.conduct-modal {
+  display: none;
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(black, 0.9);
+
+  &-header {
+    background-color: $color-primary;
+    padding: 2rem 1rem;
+
+    h1 {
+      color: $color-yellow;
+    }
+  }
+
+  &-content {
+    background-color: #f4f4f4;
+    margin: 7% auto;
+    padding: 2rem;
+    border: 1px solid #000;
+    width: 70%;
+    box-shadow: $box-shadow-light;
+    overflow: scroll;
+
+    h2 {
+      font-size: 1.6rem;
+      color: $color-primary;
+      padding: 2rem 1rem;
+      text-decoration: underline;
+    }
+
+    p {
+      font-size: 1.4rem;
+      padding: 2rem 1rem;
+    }
+
+    li {
+      font-size: 1.3rem;
+      padding: 1rem 0.5rem;
+      margin-left: 2rem;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      color: $color-primary;
+      padding: 2rem 1rem;
+      text-decoration: underline;
+    }
+  }
+}
+
+.conduct-close {
+  color: $color-yellow;
+  float: right;
+  font-size: 2.8rem;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    color: darken($color: $color-yellow, $amount: 20%);
+    text-decoration: none;
+    cursor: pointer;
   }
 }
