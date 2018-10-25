@@ -16,10 +16,21 @@ body {
   margin-bottom: 1rem;
   // position: relative;
 
+  @media (max-width: 940px) {
+    min-height: 5rem;
+  }
+
   .nav1 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     font-size: 1.3rem;
+
+    @media (max-width: 1015px) {
+      font-size: 1.2rem;
+    }
+    @media (max-width: 940px) {
+      display: none;
+    }
 
     li {
       list-style: none;
@@ -47,6 +58,11 @@ body {
 
   .break {
     content: "";
+    display: block;
+
+    @media (max-width: 940px) {
+      display: none;
+    }
   }
 
   .logo {
@@ -54,13 +70,19 @@ body {
     left: 46%;
     top: -2rem;
 
+    @media (max-width: 940px) {
+      left: 0;
+    }
+
     img {
       // position: absolute;
       height: 13rem;
       width: 11rem;
 
-      @media (max-width: 1050px) {
-        left: -200%;
+      @media (max-width: 940px) {
+        height: 10rem;
+        width: 8rem;
+        transition: all 0.2s ease-in-out;
       }
     }
   }
@@ -69,6 +91,13 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     font-size: 1.3rem;
+
+    @media (max-width: 1015px) {
+      font-size: 1.2rem;
+    }
+    @media (max-width: 940px) {
+      display: none;
+    }
 
     li {
       list-style: none;
@@ -93,7 +122,27 @@ body {
       color: $color-yellow;
     }
   }
+
+  .sidenav-btn {
+    display: none;
+    font-size: 2rem;
+    color: $color-secondary;
+
+    @media (max-width: 940px) {
+      display: block;
+      position: absolute;
+      right: 1rem;
+      top: 1.7rem;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+      }
+    }
+  }
 }
+
 // Drop Down Buttons
 
 .dropdown {
@@ -127,5 +176,44 @@ body {
     &:active {
       background: darken($color: $color-navy, $amount: 10%);
     }
+  }
+}
+
+// Side Nav
+
+.sidebar-nav {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0rem;
+  width: 20%;
+  height: 100%;
+  z-index: 1000;
+  background-color: $color-primary;
+  padding: 5rem 1rem;
+  font-size: 1.3rem;
+
+  li {
+    list-style: none;
+    padding-bottom: 20px;
+    margin-bottom: 1rem;
+
+    &:hover {
+      border-bottom: 1px solid $color-yellow;
+      padding-bottom: 19px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 1.5rem 4.5rem;
+    height: 100%;
+    width: 100%;
+  }
+
+  a:hover {
+    color: $color-yellow;
   }
 }

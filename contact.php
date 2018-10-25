@@ -25,11 +25,11 @@
                     <form action="" method="POST" class="contact-form">
                         <div class="form-group">
                             <label for="name">Name:</label>
-                            <input type="text" placeholder="Your Name">
+                            <input type="text" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" placeholder="Your Email">
+                            <input type="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
                             <label for="teamName">Team Name: (Optional)</label>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="form-group">
                             <label for="message" class="message-label">Message:</label>
-                            <textarea name="message" id="" cols="30" rows="10" placeholder="Write your message here"></textarea>
+                            <textarea name="message" id="" cols="30" rows="10" placeholder="Write your message here" required></textarea>
                         </div>
                         <input type="submit" value="Send" class="submit">
 
@@ -75,11 +75,7 @@
     
     
   
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="js/modal.js"></script>
-    <script src="js/modal2.js"></script>
+  <?php include 'components/scripts.php'; ?>
   
 </body>
 </html>

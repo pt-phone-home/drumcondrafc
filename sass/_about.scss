@@ -11,12 +11,32 @@
   height: 50rem;
   position: relative;
 
+  @media (max-width: 940px) {
+    height: 40rem;
+  }
+  @media (max-width: 630px) {
+    height: 35rem;
+  }
+
   h1 {
     position: absolute;
     top: 10rem;
     left: 3rem;
     font-size: 7rem;
     color: $color-navy;
+
+    @media (max-width: 1070px) {
+      font-size: 6rem;
+    }
+    @media (max-width: 940px) {
+      font-size: 5rem;
+    }
+    @media (max-width: 670px) {
+      font-size: 4rem;
+    }
+    @media (max-width: 450px) {
+      font-size: 3rem;
+    }
   }
 }
 
@@ -32,6 +52,14 @@
   display: grid;
   grid-template-columns: 1fr 3fr;
 
+  @media (max-width: 1165px) {
+    grid-column: 1 / -1;
+  }
+
+  @media (max-width: 700px) {
+    height: 35rem;
+  }
+
   h2 {
     font-size: 4rem;
     color: $color-yellow;
@@ -39,12 +67,39 @@
     padding-top: 2rem;
     padding-left: 1rem;
     margin-top: 1rem;
+
+    @media (max-width: 1025px) {
+      font-size: 3rem;
+    }
+
+    @media (max-width: 920px) {
+      display: none;
+    }
+  }
+
+  &-text {
+    @media (max-width: 920px) {
+      grid-column: 1 / -1;
+    }
   }
 
   h3 {
     font-size: 5.5rem;
     color: $color-yellow;
     padding: 5rem 10rem 3rem 10rem;
+
+    @media (max-width: 1280px) {
+      font-size: 5rem;
+    }
+
+    @media (max-width: 1025px) {
+      font-size: 4.5rem;
+    }
+
+    @media (max-width: 700px) {
+      padding: 1rem;
+      font-size: 3rem;
+    }
   }
 
   p {
@@ -53,6 +108,18 @@
     color: white;
     line-height: 1.4;
     letter-spacing: 0.7px;
+
+    @media (max-width: 1025px) {
+      font-size: 1.4rem;
+    }
+
+    @media (max-width: 700px) {
+      padding: 1rem;
+    }
+    @media (max-width: 580px) {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
   }
 }
 

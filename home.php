@@ -37,63 +37,67 @@
             
 
             <div class="news_and_fixtures-fixtures">
-                <h1> <a href="#"> Fixtures & Results </a> <a href="#" alt="More Fixtures and Results"><i class="fas fa-forward"></i></a></h1>
-                <div class="card border-top-navy">
-                    <div class="card-header">
-                        <div class="card-header-details">
-                            <h3>Sun 20th Nov</h3>
-                            <h4>Division X</h4>
-                            <h4>Under 11s</h4>
+                <div class="fixture1">
+                    <h1> <a href="#"> Fixtures </a> <a href="#" alt="More Fixtures and Results"><i class="fas fa-forward"></i></a></h1>
+                    <div class="card border-top-navy">
+                        <div class="card-header">
+                            <div class="card-header-details">
+                                <h3>Sun 20th Nov</h3>
+                                <h4>Division X</h4>
+                                <h4>Under 11s</h4>
+                            </div>
+                            <div class="card-header-image">
+                                <i class="fas fa-calendar-alt navy-text "></i>
+                            </div>
                         </div>
-                        <div class="card-header-image">
-                            <i class="fas fa-calendar-alt navy-text "></i>
+                        <div class="card-content">
+                            <div class="team1">
+                                Drumcondra
+                            </div>
+                            <div class="vs">
+                                V's
+                            </div>
+                            <div class="team2">
+                                Marino
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="team1">
-                            Drumcondra
+                        <div class="card-action">
+                            <h3>Location</h3>
+                            <a href="http://maps.google.com">Pitch</a>
                         </div>
-                        <div class="vs">
-                            V's
-                        </div>
-                        <div class="team2">
-                            Marino
-                        </div>
-                    </div>
-                    <div class="card-action">
-                        <h3>Location</h3>
-                        <a href="http://maps.google.com">Pitch</a>
                     </div>
                 </div>
-
-                <div class="card navy white-text border-top-yellow">
-                    <div class="card-header">
-                        <div class="card-header-details">
-                            <h3>Sun 20th Nov</h3>
-                            <h4>Division X</h4>
-                            <h4>Under 11s</h4>
+                <div class="fixture2">
+                    <h1> <a href="#"> Results </a> <a href="#" alt="More Fixtures and Results"><i class="fas fa-forward"></i></a></h1>
+                    <div class="card navy white-text border-top-yellow">
+                        <div class="card-header">
+                            <div class="card-header-details">
+                                <h3>Sun 20th Nov</h3>
+                                <h4>Division X</h4>
+                                <h4>Under 11s</h4>
+                            </div>
+                            <div class="card-header-image">
+                                <i class="fas fa-trophy yellow-text "></i>
+                            </div>
                         </div>
-                        <div class="card-header-image">
-                            <i class="fas fa-trophy yellow-text "></i>
+                        <div class="card-content">
+                            <div class="team1">
+                                Drumcondra
+                            </div>
+                            <div class="vs">
+                                V's
+                            </div>
+                            <div class="team2">
+                                Marino
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-content">
-                        <div class="team1">
-                            Drumcondra
+                        <div class="card-footer">
+                            <div>
+                                4
+                            </div>
+                            <div> - </div>
+                            <div> 1 </div>
                         </div>
-                        <div class="vs">
-                            V's
-                        </div>
-                        <div class="team2">
-                            Marino
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div>
-                            4
-                        </div>
-                        <div> - </div>
-                        <div> 1 </div>
                     </div>
                 </div>
 
@@ -207,10 +211,7 @@
     </div>
     
   
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="js/carousel.js"></script>
+  <?php include 'components/scripts.php'; ?>
     <script>
 
     
