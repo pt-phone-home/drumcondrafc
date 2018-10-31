@@ -87,7 +87,7 @@
 							<i class="fas fa-forward"></i>
 						</a>
 					</h1>
-					<div class="card border-top-navy">
+					<div class="card card-small border-top-navy">
 						<div class="card-header">
 							<div class="card-header-details">
 								<h3>Sun 20th Nov</h3>
@@ -122,7 +122,7 @@
 							<i class="fas fa-forward"></i>
 						</a>
 					</h1>
-					<div class="card navy white-text border-top-yellow">
+					<div class="card card-small navy white-text border-top-yellow">
 						<div class="card-header">
 							<div class="card-header-details">
 								<h3>Sun 20th Nov</h3>
@@ -178,7 +178,7 @@
 						</p>
 					</div>
 					<div class="card-footer">
-						<a href="#">Read More</a>
+						<a href="newsitem.php?id=<?=$article['id'];?>">Read More</a>
 					</div>
 				</div>
 				<?php endforeach; ?>
@@ -243,7 +243,7 @@
 
 
 				<div class="news_and_ads-news-action">
-					<a href="#">More News</a>
+					<a href="news.php">More News</a>
 				</div>
 			</div>
 

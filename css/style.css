@@ -383,10 +383,13 @@ body {
       height: 100%; }
     .carousel .slide-headline {
       position: absolute;
-      top: 15px;
-      left: 10px;
+      top: 5px;
+      left: 0px;
       color: #f9ec37;
-      font-size: 6rem; }
+      font-size: 5rem;
+      background-color: #2a3075;
+      width: 100%;
+      padding-left: 1rem; }
     .carousel .slide-text {
       position: absolute;
       display: block;
@@ -421,23 +424,33 @@ body {
     transform: translateX(0px); } }
 
 .card {
-  height: 23rem;
+  height: 27rem;
   padding: 0.5rem 0.5rem;
   position: relative;
   box-shadow: 6px 6px 5px -2px rgba(0, 0, 0, 0.18);
   display: grid;
-  grid-template-rows: 0.5fr 1.5fr 1fr; }
+  grid-template-rows: 10rem 10rem 7rem; }
 
 .card-small {
-  height: 15rem;
-  background: white; }
+  height: 21rem;
+  background: white;
+  grid-template-rows: 7rem 7rem 7rem; }
 
 .transparent {
   background: transparent; }
 
 .card-large {
-  height: 35rem;
-  grid-template-rows: 1.5fr 1fr 0.5fr; }
+  height: 32rem;
+  grid-template-rows: 15rem 10rem 7rem; }
+
+.card-xlarge {
+  height: 40rem;
+  grid-template-rows: 18rem 13rem 9rem; }
+
+.card-xlnewsitem {
+  min-height: 60vh;
+  height: auto;
+  grid-template-rows: 30% 70%; }
 
 .card-image {
   position: relative;
@@ -447,13 +460,13 @@ body {
 .card-image img {
   object-fit: cover;
   width: 100%;
-  max-height: 100%;
+  height: 100%;
   transform: scale(0.98);
   transition: all 0.2s ease-in-out; }
 
 .card-image img:hover {
   transform: scale(1);
-  filter: hue-rotate(20deg); }
+  filter: hue-rotate(40deg); }
 
 .card-header {
   padding: 5px;
@@ -500,7 +513,10 @@ body {
   align-items: center; }
 
 .card-content-plain {
-  grid-template-columns: 1fr; }
+  grid-template-columns: 1fr;
+  overflow: scroll;
+  text-overflow: ellipsis;
+  word-wrap: break-word; }
 
 .card-action {
   border-top: lightgrey 1px solid;
@@ -1532,5 +1548,29 @@ body {
 
 .section-news {
   grid-column: 3 / 11;
-  border: 1px solid #000;
-  height: 40rem; }
+  height: auto;
+  padding: 6rem;
+  background-color: #f1f1fa; }
+
+.news-item {
+  margin-bottom: 2rem;
+  border: #2a3075 1px solid; }
+  .news-item h1 {
+    margin-top: 1rem;
+    padding-left: 1rem;
+    background-color: #2a3075;
+    color: #f9ec37;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; }
+  .news-item p {
+    margin-top: 1rem;
+    padding-left: 1rem;
+    font-size: 1.6rem;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+
+.section-newsitem {
+  grid-column: 3 / 11;
+  height: auto;
+  padding: 6rem;
+  background-color: #f1f1fa; }

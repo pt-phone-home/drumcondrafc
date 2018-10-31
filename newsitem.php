@@ -16,15 +16,14 @@
 
 	$sql = "SELECT *
 			FROM news
-			ORDER BY published_at DESC
-			LIMIT 10";
+			WHERE id=" . $_GET['id'];
 
 	$results = mysqli_query($conn, $sql);
 
 	if ($results === FALSE) {
 		echo mysqli_error($conn);
 	} else {
-		$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
+		$article = mysqli_fetch_assoc($results);
 	}
 
 ?>
@@ -54,9 +53,11 @@
 
 		</div>
 
-		<div class="section-news">
-			<?php foreach ($articles as $article): ?>
-			<div class="card card-xlarge news-item">
+		<div class="section-newsitem">
+			<?php if ($article === null): ?>
+			<p>News Item not found!</p>
+			<?php else: ?>
+			<div class="card card-xlnewsitem news-item">
 				<div class="card-image">
 					<img src="img/uploads/<?= $article['img'];?>" alt="">
 				</div>
@@ -68,11 +69,8 @@
 						<?= $article['content']?>
 					</p>
 				</div>
-				<div class="card-footer">
-					<a href="newsitem.php?id=<?= $article['id'];?>">Read More</a>
-				</div>
 			</div>
-			<?php endforeach; ?>
+			<?php endif; ?>
 
 		</div>
 

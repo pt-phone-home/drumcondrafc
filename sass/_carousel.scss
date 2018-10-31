@@ -13,10 +13,13 @@
 
     &-headline {
       position: absolute;
-      top: 15px;
-      left: 10px;
+      top: 5px;
+      left: 0px;
       color: $color-secondary;
-      font-size: 6rem;
+      font-size: 5rem;
+      background-color: $color-primary;
+      width: 100%;
+      padding-left: 1rem;
     }
 
     &-text {
