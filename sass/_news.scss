@@ -1,0 +1,39 @@
+.news-container {
+  display: grid;
+  grid-template-columns: 7rem repeat(10, 1fr) 7rem;
+  grid-template-rows: auto;
+}
+
+.news-header {
+  grid-column: 1 / -1;
+  display: grid;
+  height: 25rem;
+  background-color: $color-navy;
+  margin-bottom: 1rem;
+
+  h1 {
+    grid-column: 1 / -1;
+    text-transform: capitalize;
+    justify-self: center;
+    align-self: center;
+    color: $color-yellow;
+    font-size: 4rem;
+
+    @media (max-width: 440px) {
+      font-size: 3.5rem;
+    }
+  }
+
+  i {
+    font-size: 11rem;
+    color: $color-yellow;
+    align-self: center;
+    justify-self: center;
+  }
+}
+
+.section-news {
+  grid-column: 3 / 11;
+  border: 1px solid #000;
+  height: 40rem;
+}

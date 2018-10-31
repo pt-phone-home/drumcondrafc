@@ -18,6 +18,10 @@
     align-self: center;
     color: $color-yellow;
     font-size: 4rem;
+
+    @media (max-width: 440px) {
+      font-size: 3.5rem;
+    }
   }
 
   i {
@@ -37,6 +41,26 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
+
+  @media (max-width: 1165px) {
+    grid-column: 1 / -1;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+
+  @media (max-width: 860px) {
+    grid-template-columns: 1fr;
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  @media (max-width: 615px) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  @media (max-width: 450px) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 
   &-data {
     display: grid;

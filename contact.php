@@ -4,7 +4,7 @@
     ?>
     <title>Contact - Drumcondra A.F.C</title>
 </head>
-<body>
+<body class"body">
     
     <div class="contact-container">
     

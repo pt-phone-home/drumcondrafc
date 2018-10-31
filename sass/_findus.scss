@@ -14,14 +14,26 @@
   justify-items: center;
   margin-bottom: 1rem;
 
+  @media (max-width: 1000px) {
+    height: 27rem;
+  }
+
   h1 {
     font-size: 4rem;
     color: $color-yellow;
+
+    @media (max-width: 1000px) {
+      font-size: 3.5rem;
+    }
   }
 
   i {
     font-size: 20rem;
     color: $color-yellow;
+
+    @media (max-width: 1000px) {
+      font-size: 15rem;
+    }
   }
 }
 
@@ -38,6 +50,16 @@
 
   @media (max-width: 1200px) {
     height: 70rem;
+  }
+
+  @media (max-width: 1165px) {
+    grid-column: 1 / -1;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+
+  @media (max-width: 900px) {
+    height: 60rem;
   }
 
   &-intro {
@@ -59,5 +81,18 @@
     grid-row: 2 / 3;
     padding: 4rem;
     margin: 6rem;
+
+    @media (max-width: 1000px) {
+      padding: 3rem;
+      margin: 4rem;
+    }
+    @media (max-width: 700px) {
+      padding: 2rem;
+      margin: 3rem;
+    }
+    @media (max-width: 500px) {
+      padding: 1rem;
+      margin: 1.5rem;
+    }
   }
 }
