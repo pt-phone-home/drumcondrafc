@@ -1,157 +1,151 @@
 .card {
-    height: 23rem;
-    padding: .5rem .5rem;
-    position: relative;
-    box-shadow: $box-shadow-light;
-    
-    display: grid;
-    grid-template-rows: .5fr 1.5fr 1fr;
-  }
+  height: 23rem;
+  padding: 0.5rem 0.5rem;
+  position: relative;
+  box-shadow: $box-shadow-light;
 
-  .card-small {
-    height: 15rem;
-    background: white;
-  }
+  display: grid;
+  grid-template-rows: 0.5fr 1.5fr 1fr;
+}
 
-  .transparent {
-    background: transparent;
-  }
+.card-small {
+  height: 15rem;
+  background: white;
+}
 
-  .card-large {
-    height: 35rem;
-    grid-template-rows: 1.5fr 1fr .5fr;
-  }
-  
+.transparent {
+  background: transparent;
+}
+
+.card-large {
+  height: 35rem;
+  grid-template-rows: 1.5fr 1fr 0.5fr;
+}
+
 // Top Section Options
 
-  .card-image {
-        position: relative;
-        grid-row: 1 / 2;
-        grid-column: 1 / -1;
-        }
-  .card-image img {
-    object-fit: cover;
-    width: 100%;
-    max-height: 100%;
-    transform: scale(.98);
-    transition: all .2s ease-in-out;
+.card-image {
+  position: relative;
+  grid-row: 1 / 2;
+  grid-column: 1 / -1;
+}
+.card-image img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+  transform: scale(0.98);
+  transition: all 0.2s ease-in-out;
+}
+
+.card-image img:hover {
+  transform: scale(1);
+  filter: hue-rotate(20deg);
+}
+
+.card-header {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  border-bottom: grey 1px solid;
+
+  &-image {
+    font-size: 2.1rem;
+    color: blue;
+    justify-self: center;
+    align-self: center;
+    // border: 1px blue solid;
+    // border-radius: 50%;
+    // background: transparent;
+    padding: 7px;
   }
+}
 
-  .card-image img:hover {
-    transform: scale(1);
-    filter: hue-rotate(90deg);
-  }
+.card-image span {
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+}
 
-  .card-header {
-    padding: 5px;
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    border-bottom: grey 1px solid;
+// Buttons
 
-    &-image {
-      font-size: 2.1rem;
-      color: blue;
-      justify-self: center;
-      align-self: center;
-      // border: 1px blue solid;
-      // border-radius: 50%;
-      // background: transparent;
-      padding: 7px;
-    }
-  }
-  
-  .card-image span {
-        position: absolute;
-        bottom: 10px;
-        left: 5px;
-        }
-  
+.btn-floating {
+  position: absolute;
+  bottom: -13px;
+  right: -5px;
+  background-color: red;
+  text-decoration: none;
+  color: white;
+  width: 42px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+}
 
-  // Buttons
+.fa-plus {
+  position: relative;
+  top: 12px;
+  left: 1px;
+  font-size: 1em;
+}
 
-
-  .btn-floating {
-    position: absolute;
-    bottom: -13px;
-    right: -5px;
-    background-color: red;
-    text-decoration: none;
-    color: white;
-    width: 42px;
-    height: 40px;
-    border-radius: 50%;
-    text-align: center;
-  }
-  
-  .fa-plus {
-    position: relative;
-    top: 12px;
-    left: 1px;
-    font-size: 1em;
-  }
-  
 // Content Section Options
 
-  .card-content {
-    padding: 5px;
-    font-size: 1.5rem;
-    border-bottom: lightgrey 1px solid;
+.card-content {
+  padding: 5px;
+  font-size: 1.5rem;
+  border-bottom: lightgrey 1px solid;
 
-    display: grid;
-    grid-template-columns: 1fr .5fr 1fr;
-    justify-items: center;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
 
+.card-content-plain {
+  grid-template-columns: 1fr;
+}
+
+// Bottom Section Options
+
+.card-action {
+  border-top: lightgrey 1px solid;
+  display: grid;
+}
+
+.card-action a {
+  margin-top: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: red;
+  align-self: center;
+}
+
+.card-footer {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr;
+  align-items: center;
+  justify-items: center;
+
+  p {
+    font-size: 1.3rem;
   }
 
-  .card-content-plain {
-    grid-template-columns: 1fr;
-  }
-
-  // Bottom Section Options
-
-  .card-action {
-    border-top: lightgrey 1px solid;
-    display: grid;
-  }
-  
-  .card-action a {
-    margin-top: 10px;
+  a {
+    grid-column: 1 / -1;
+    justify-self: center;
+    background: $color-navy;
+    color: $color-yellow;
+    padding: 0.85rem 0.85rem;
+    border-radius: 5px;
     text-decoration: none;
-    text-transform: uppercase;
-    color:red;
-    align-self: center;
-  }
+    font-size: 1.2rem;
 
-  .card-footer {
-    display: grid;
-    grid-template-columns: 1fr .5fr 1fr;
-    align-items: center;
-    justify-items: center;
-
-    p {
-      font-size: 1.3rem;
-    }
-
-    a {
-      grid-column: 1 / -1;
-      justify-self: center;
-      background: $color-navy;
-      color: $color-yellow;
-      padding: .85rem .85rem;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 1.2rem;
-
-      &:hover {
-        background: lighten($color: $color-navy, $amount: 10%)
-      }
+    &:hover {
+      background: lighten($color: $color-navy, $amount: 10%);
     }
   }
+}
 
-
-
-  .card-footer div {
-    font-size: 2rem;
-
-  }
+.card-footer div {
+  font-size: 2rem;
+}

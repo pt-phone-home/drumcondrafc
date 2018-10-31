@@ -51,11 +51,18 @@
 		<section class="news_and_fixtures">
 
 			<div class="news_and_fixtures-news carousel">
+				<?php foreach ($articles as $article): ?>
 				<div class="slide fade">
-					<img src="http://placehold.it/400x400" alt="" class="slide-img">
-					<h1 class="slide-headline from-left">News Item 1</h1>
-					<p class="slide-text">This is subtext</p>
+					<img src="img/uploads/<?= $article['img'];?>" alt="" class="slide-img">
+					<h1 class="slide-headline from-left">
+						<?= $article['title']; ?>
+					</h1>
+					<p class="slide-text">
+						<?= $article['headline'];?>
+					</p>
 				</div>
+				<?php endforeach; ?>
+				<!--
 				<div class="slide fade">
 					<img src="http://placehold.it/500x500" alt="" class="slide-img">
 					<h1 class="slide-headline from-left">News Item 2</h1>
@@ -66,6 +73,7 @@
 					<h1 class="slide-headline from-left">News Item 3</h1>
 					<p class="slide-text">This is subtext</p>
 				</div>
+				-->
 
 			</div>
 
@@ -159,7 +167,7 @@
 				<?php foreach ($articles as $article): ?>
 				<div class="card card-large border-top-navy">
 					<div class="card-image">
-						<img src="http://placehold.it/200x200" alt="">
+						<img src="img/uploads/<?= $article['img'];?>" alt="">
 					</div>
 					<div class="card-content card-content-plain">
 						<h4>

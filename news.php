@@ -56,7 +56,7 @@
 
 		<div class="section-news">
 
-			Testing
+
 		</div>
 
 		<?php include 'components/footer.php'; ?>
