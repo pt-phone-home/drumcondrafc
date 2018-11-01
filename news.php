@@ -1,18 +1,5 @@
 <?php
-	$db_host = 'localhost';
-	$db_name = 'drumcondrafc';
-	$db_user = 'drums_admin';
-	$db_password = 'NDF9QRpEHixAQtIS';
-
-	$conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
-
-	if (mysqli_connect_error()) {
-		echo mysqli_connect_error();
-		exit;
-	}
-
-	echo 'Connection Successful';
-
+	require 'components/database.php';
 
 	$sql = "SELECT *
 			FROM news
@@ -56,19 +43,17 @@
 
 		<div class="section-news">
 			<?php foreach ($articles as $article): ?>
-			<div class="card card-xlarge news-item">
-				<div class="card-image">
+			<div class="news-item">
+				<h1>
+					<?= $article['title']?>
+				</h1>
+				<div class="news-item-img">
 					<img src="img/uploads/<?= $article['img'];?>" alt="">
 				</div>
-				<div class="card-content-plain">
-					<h1>
-						<?= $article['title']?>
-					</h1>
-					<p>
-						<?= $article['content']?>
-					</p>
+				<div class="news-item-content">
+					<?= $article['content']?>
 				</div>
-				<div class="card-footer">
+				<div class="news-item-footer">
 					<a href="newsitem.php?id=<?= $article['id'];?>">Read More</a>
 				</div>
 			</div>

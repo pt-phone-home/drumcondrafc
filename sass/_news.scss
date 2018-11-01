@@ -42,6 +42,13 @@
 .news-item {
   margin-bottom: 2rem;
   border: $color-primary 1px solid;
+  height: auto;
+  padding: 0.5rem 0.5rem;
+  position: relative;
+  box-shadow: $box-shadow-light;
+
+  display: grid;
+  grid-template-rows: 5rem 20rem 15rem 3rem;
 
   h1 {
     margin-top: 1rem;
@@ -50,18 +57,109 @@
     color: $color-secondary;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    grid-row: 1 / 2;
   }
 
-  img {
+  &-img {
+    grid-row: 2 / 3;
+    width: 100%;
+    margin-top: 0.5rem;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
   }
 
-  p {
+  &-content {
+    grid-row: 3 / 4;
+    margin-bottom: 0.5rem;
+    overflow: scroll;
+    font-size: 1.4rem;
+    padding: 1rem 1rem;
+  }
+
+  &-footer {
+    grid-row: 4 / 5;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 0.5rem;
+
+    a {
+      justify-self: center;
+      background: $color-navy;
+      color: $color-yellow;
+      padding: 0.85rem 0.85rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1.2rem;
+
+      &:hover {
+        background: lighten($color: $color-navy, $amount: 10%);
+      }
+    }
+  }
+}
+
+.news-item-full {
+  margin-bottom: 2rem;
+  border: $color-primary 1px solid;
+  height: auto;
+  padding: 0.5rem 0.5rem;
+  position: relative;
+  box-shadow: $box-shadow-light;
+
+  display: grid;
+  grid-template-rows: 5rem 25rem 40rem;
+
+  h1 {
     margin-top: 1rem;
     padding-left: 1rem;
-    // background-color: lighten($color: $color-primary, $amount: 50%);
-    font-size: 1.6rem;
+    background-color: $color-primary;
+    color: $color-secondary;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    grid-row: 1 / 2;
+  }
+
+  &-img {
+    grid-row: 2 / 3;
+    width: 100%;
+    margin-top: 0.5rem;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-content {
+    grid-row: 3 / 4;
+    margin-bottom: 0.5rem;
     overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: 1.4rem;
+    padding: 1rem 1rem;
+  }
+
+  &-footer {
+    grid-row: 4 / 5;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 0.5rem;
+
+    a {
+      justify-self: center;
+      background: $color-navy;
+      color: $color-yellow;
+      padding: 0.85rem 0.85rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1.2rem;
+
+      &:hover {
+        background: lighten($color: $color-navy, $amount: 10%);
+      }
+    }
   }
 }
 

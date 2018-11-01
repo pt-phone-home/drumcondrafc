@@ -11,7 +11,7 @@ dataCloseBtn.onclick = function() {
 };
 
 window.onclick = function(e) {
-  if (e.target == dataModal) {
+  if (e.target === dataModal) {
     dataModal.style.display = "none";
   }
 };

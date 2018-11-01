@@ -1,22 +1,12 @@
 <?php
-	$db_host = 'localhost';
-	$db_name = 'drumcondrafc';
-	$db_user = 'drums_admin';
-	$db_password = 'NDF9QRpEHixAQtIS';
+	require 'components/database.php';
 
-	$conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
-
-	if (mysqli_connect_error()) {
-		echo mysqli_connect_error();
-		exit;
-	}
-
-	echo 'Connection Successful';
-
-
+	if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 	$sql = "SELECT *
 			FROM news
 			WHERE id=" . $_GET['id'];
+
+	// var_dump($sql);
 
 	$results = mysqli_query($conn, $sql);
 
@@ -25,6 +15,10 @@
 	} else {
 		$article = mysqli_fetch_assoc($results);
 	}
+
+} else {
+	$article = null;
+}
 
 ?>
 
@@ -57,17 +51,20 @@
 			<?php if ($article === null): ?>
 			<p>News Item not found!</p>
 			<?php else: ?>
-			<div class="card card-xlnewsitem news-item">
-				<div class="card-image">
+			<div class="news-item-full">
+				<h1>
+					<?= $article['title']?>
+				</h1>
+				<div class="news-item-full-img">
 					<img src="img/uploads/<?= $article['img'];?>" alt="">
 				</div>
-				<div class="card-content-plain">
-					<h1>
-						<?= $article['title']?>
-					</h1>
+				<div class="news-item-full-content">
 					<p>
 						<?= $article['content']?>
 					</p>
+				</div>
+				<div class="news-item-full-footer">
+					<a href="news.php">Back to news</a>
 				</div>
 			</div>
 			<?php endif; ?>

@@ -71,6 +71,8 @@
 	<li>
 		<a href="Contact.php">Contact</a>
 	</li>
-
+	<div class="sidebar-nav-close">
+		&times;
+	</div>
 
 </div>
