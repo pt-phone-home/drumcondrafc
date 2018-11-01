@@ -39,15 +39,17 @@
 
 			<div class="news_and_fixtures-news carousel">
 				<?php foreach ($articles as $article): ?>
-				<div class="slide fade">
-					<img src="img/uploads/<?= $article['img'];?>" alt="" class="slide-img">
-					<h1 class="slide-headline from-left">
-						<?= $article['title']; ?>
-					</h1>
-					<p class="slide-text">
-						<?= $article['headline'];?>
-					</p>
-				</div>
+				<a href="newsitem.php?id=<?=$article['id']; ?>">
+					<div class="slide fade">
+						<img src="img/uploads/<?= $article['img'];?>" alt="" class="slide-img">
+						<h1 class="slide-headline from-left">
+							<?= $article['title']; ?>
+						</h1>
+						<p class="slide-text">
+							<?= $article['headline'];?>
+						</p>
+					</div>
+				</a>
 				<?php endforeach; ?>
 				<!--
 				<div class="slide fade">

@@ -1,5 +1,9 @@
 .carousel {
   height: 60rem;
+
+  @media (max-width: 560px) {
+    height: 50rem;
+  }
   .slide {
     height: 100%;
     width: 100%;

@@ -126,6 +126,10 @@
       grid-row: 1 / 2;
       margin-bottom: 1rem;
     }
+
+    @media (max-width: 560px) {
+      height: 50rem;
+    }
   }
 
   &-fixtures {
@@ -148,6 +152,7 @@
 
     @media (max-width: 560px) {
       grid-template-columns: 1fr;
+      height: 50rem;
     }
 
     h1 {
