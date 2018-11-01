@@ -24,22 +24,22 @@
 				<div class="contact-info-form-container">
 					<h1>Contact form</h1>
 
-					<form action="process_form.php" method="GET" class="contact-form">
+					<form action="process_form.php" method="POST" class="contact-form">
 						<div class="form-group">
 							<label for="name">Name:</label>
-							<input type="text" placeholder="Your Name" required>
+							<input type="text" placeholder="Your Name" id="name" name="name" required>
 						</div>
 						<div class="form-group">
 							<label for="email">Email:</label>
-							<input type="email" placeholder="Your Email" required>
+							<input type="email" placeholder="Your Email" name="email" id="email" required>
 						</div>
 						<div class="form-group">
 							<label for="teamName">Team Name: (Optional)</label>
-							<input type="text">
+							<input type="text" name="teamName" id="teamName">
 						</div>
 						<div class="form-group">
 							<label for="message" class="message-label">Message:</label>
-							<textarea name="message" id="" cols="30" rows="10" placeholder="Write your message here" required></textarea>
+							<textarea name="message" id="message" cols="30" rows="10" placeholder="Write your message here" required></textarea>
 						</div>
 						<input type="submit" value="Send" class="submit">
 
