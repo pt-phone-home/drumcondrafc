@@ -1,6 +1,6 @@
 <?php
 	require 'components/database.php';
-
+	// NEWS QUERY
 	$sql = "SELECT *
 			FROM news
 			ORDER BY published_at DESC
@@ -12,6 +12,20 @@
 		echo mysqli_error($conn);
 	} else {
 		$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
+	}
+
+	// FEATURED FIXTURE QUERY
+	$featured_fixture_sql = "SELECT *
+							FROM featured_fixture
+							ORDER BY id DESC
+							LIMIT 1";
+
+	$featured_fixture_result = mysqli_query($conn, $featured_fixture_sql);
+
+	if ($featured_fixture_result === FALSE) {
+		echo mysqli_error($conn);
+	} else {
+		$feat_fixture = mysqli_fetch_all($featured_fixture_result, MYSQLI_ASSOC);
 	}
 
 ?>
@@ -70,18 +84,24 @@
 
 			<div class="news_and_fixtures-fixtures">
 				<div class="fixture1">
+
 					<h1>
-						<a href="#"> Fixtures </a>
-						<a href="#" alt="More Fixtures and Results">
+						<a href="fixtures.php"> Fixtures
 							<i class="fas fa-forward"></i>
 						</a>
 					</h1>
 					<div class="card card-small border-top-navy">
 						<div class="card-header">
+							<?php foreach ($feat_fixture as $fix):?>
 							<div class="card-header-details">
-								<h3>Sun 20th Nov</h3>
-								<h4>Division X</h4>
-								<h4>Under 11s</h4>
+								<h3>
+									<?= $fix['date'];?>
+								</h3>
+								<br>
+								<!-- <h4>Division X</h4> -->
+								<h2>
+									<?= $fix['squad'];?>
+								</h2>
 							</div>
 							<div class="card-header-image">
 								<i class="fas fa-calendar-alt navy-text "></i>
@@ -89,21 +109,28 @@
 						</div>
 						<div class="card-content">
 							<div class="team1">
-								Drumcondra
+								<?= $fix['home_team'];?>
 							</div>
 							<div class="vs">
 								V's
 							</div>
 							<div class="team2">
-								Marino
+								<?= $fix['away_team'];?>
 							</div>
 						</div>
 						<div class="card-action">
-							<h3>Location</h3>
-							<a href="http://maps.google.com">Pitch</a>
+							<p>
+								<h2>Location:
+									<?= $fix['location'];?>
+								</h2>
+								<h3>Time:
+									<?= $fix['time'];?>
+								</h3>
+							</p>
 						</div>
 					</div>
 				</div>
+				<?php endforeach; ?>
 				<div class="fixture2">
 					<h1>
 						<a href="#"> Results </a>

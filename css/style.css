@@ -246,7 +246,8 @@ body {
         margin-left: 1.7rem;
         text-decoration: none; }
         .news_and_fixtures-fixtures h1 a i {
-          font-size: 1.7rem; }
+          font-size: 1.7rem;
+          margin-left: 3rem; }
 
 .news_and_ads-background {
   grid-column: 1 / -1;
