@@ -63,3 +63,11 @@
     color: $color-secondary;
   }
 }
+
+.form-container li {
+  list-style: none;
+  margin-left: 2rem;
+  background-color: $color-primary;
+  display: block;
+  color: $color-secondary;
+}

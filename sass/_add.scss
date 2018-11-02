@@ -1,0 +1,12 @@
+.add-article-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+
+  i {
+    font-size: 4rem;
+    border-radius: 50%;
+    background-color: $color-primary;
+    color: $color-secondary;
+  }
+}

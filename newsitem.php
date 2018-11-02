@@ -1,6 +1,8 @@
 <?php
 	require 'components/database.php';
 
+	$conn = getDB();
+
 	if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 	$sql = "SELECT *
 			FROM news
@@ -53,14 +55,14 @@
 			<?php else: ?>
 			<div class="news-item-full">
 				<h1>
-					<?= $article['title']?>
+					<?= htmlspecialchars($article['title'])?>
 				</h1>
 				<div class="news-item-full-img">
 					<img src="img/uploads/<?= $article['img'];?>" alt="">
 				</div>
 				<div class="news-item-full-content">
 					<p>
-						<?= $article['content']?>
+						<?= htmlspecialchars($article['content'])?>
 					</p>
 				</div>
 				<div class="news-item-full-footer">
@@ -72,6 +74,7 @@
 		</div>
 
 		<?php include 'components/footer.php'; ?>
+		<?php include 'components/add.php'; ?>
 
 
 

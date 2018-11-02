@@ -1,5 +1,7 @@
 <?php
 	require 'components/database.php';
+	
+	$conn = getDB();
 
 	$sql = "SELECT *
 			FROM news
@@ -45,13 +47,13 @@
 			<?php foreach ($articles as $article): ?>
 			<div class="news-item">
 				<h1>
-					<?= $article['title']?>
+					<?= htmlspecialchars($article['title'])?>
 				</h1>
 				<div class="news-item-img">
 					<img src="img/uploads/<?= $article['img'];?>" alt="">
 				</div>
 				<div class="news-item-content">
-					<?= $article['content']?>
+					<?= htmlspecialchars($article['content'])?>
 				</div>
 				<div class="news-item-footer">
 					<a href="newsitem.php?id=<?= $article['id'];?>">Read More</a>
@@ -62,6 +64,7 @@
 		</div>
 
 		<?php include 'components/footer.php'; ?>
+		<?php include 'components/add.php'; ?>
 
 
 

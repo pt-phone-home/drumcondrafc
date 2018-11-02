@@ -1,6 +1,16 @@
 <?php 
 
-    $db_host = 'localhost';
+
+/**
+ * Get the database connection
+ * 
+ * @return object connection to a MSQL server
+ * 
+ */
+
+function getDB() {
+	
+	$db_host = 'localhost';
 	$db_name = 'drumcondrafc';
 	$db_user = 'drums_admin';
 	$db_password = 'NDF9QRpEHixAQtIS';
@@ -13,3 +23,11 @@
 	}
 
 	echo 'Connection Successful';
+	return $conn;
+}
+
+
+
+
+
+    

@@ -1,6 +1,9 @@
 <?php
 	require 'components/database.php';
 	// NEWS QUERY
+
+	$conn = getDB();
+
 	$sql = "SELECT *
 			FROM news
 			ORDER BY published_at DESC
@@ -28,9 +31,21 @@
 		$feat_fixture = mysqli_fetch_all($featured_fixture_result, MYSQLI_ASSOC);
 	}
 
+	// FEATURED RESULT QUERY
+	$featured_score_sql = "SELECT *
+							FROM featured_score
+							ORDER BY id DESC
+							LIMIT 1";
+		
+	$featured_score_result = mysqli_query($conn, $featured_score_sql);
+
+	if ($featured_score_result === FALSE) {
+		echo mysqli_error($conn);
+	} else {
+		$feat_result = mysqli_fetch_all($featured_score_result, MYSQLI_ASSOC);
+	}
+
 ?>
-
-
 
 
 <html lang="en">
@@ -57,10 +72,10 @@
 					<div class="slide fade">
 						<img src="img/uploads/<?= $article['img'];?>" alt="" class="slide-img">
 						<h1 class="slide-headline from-left">
-							<?= $article['title']; ?>
+							<?= htmlspecialchars($article['title']); ?>
 						</h1>
 						<p class="slide-text">
-							<?= $article['headline'];?>
+							<?= htmlspecialchars($article['headline']);?>
 						</p>
 					</div>
 				</a>
@@ -100,7 +115,7 @@
 								<br>
 								<!-- <h4>Division X</h4> -->
 								<h2>
-									<?= $fix['squad'];?>
+									<?= htmlspecialchars($fix['squad']);?>
 								</h2>
 							</div>
 							<div class="card-header-image">
@@ -109,19 +124,19 @@
 						</div>
 						<div class="card-content">
 							<div class="team1">
-								<?= $fix['home_team'];?>
+								<?= htmlspecialchars($fix['home_team']);?>
 							</div>
 							<div class="vs">
 								V's
 							</div>
 							<div class="team2">
-								<?= $fix['away_team'];?>
+								<?= htmlspecialchars($fix['away_team']);?>
 							</div>
 						</div>
 						<div class="card-action">
 							<p>
 								<h2>Location:
-									<?= $fix['location'];?>
+									<?= htmlspecialchars($fix['location']);?>
 								</h2>
 								<h3>Time:
 									<?= $fix['time'];?>
@@ -133,6 +148,7 @@
 				<?php endforeach; ?>
 				<div class="fixture2">
 					<h1>
+						<?php foreach ($feat_result as $res): ?>
 						<a href="#"> Results </a>
 						<a href="#" alt="More Fixtures and Results">
 							<i class="fas fa-forward"></i>
@@ -141,9 +157,14 @@
 					<div class="card card-small navy white-text border-top-yellow">
 						<div class="card-header">
 							<div class="card-header-details">
-								<h3>Sun 20th Nov</h3>
-								<h4>Division X</h4>
-								<h4>Under 11s</h4>
+								<h3>
+									<?= $res['date'];?>
+								</h3>
+								<br>
+								<!--<h4>Division X</h4>-->
+								<h2>
+									<?= htmlspecialchars($res['squad']);?>
+								</h2>
 							</div>
 							<div class="card-header-image">
 								<i class="fas fa-trophy yellow-text "></i>
@@ -151,24 +172,27 @@
 						</div>
 						<div class="card-content">
 							<div class="team1">
-								Drumcondra
+								<?= htmlspecialchars($res['home_team']);?>
 							</div>
 							<div class="vs">
 								V's
 							</div>
 							<div class="team2">
-								Marino
+								<?= htmlspecialchars($res['away_team']); ?>
 							</div>
 						</div>
 						<div class="card-footer">
 							<div>
-								4
+								<?= $res['home_team_score'];?>
 							</div>
 							<div> - </div>
-							<div> 1 </div>
+							<div>
+								<?= $res['away_team_score'];?>
+							</div>
 						</div>
 					</div>
 				</div>
+				<?php endforeach; ?>
 
 			</div>
 
@@ -187,10 +211,10 @@
 					</div>
 					<div class="card-content card-content-plain">
 						<h4>
-							<?= $article['title'] ?>
+							<?= htmlspecialchars($article['title']) ?>
 						</h4>
 						<p>
-							<?= $article['headline'] ?>
+							<?= htmlspecialchars($article['headline']) ?>
 						</p>
 					</div>
 					<div class="card-footer">
@@ -282,6 +306,8 @@
 
 		<?php include 'components/footer.php'; 
         ?>
+
+		<?php include 'components/add.php'; ?>
 
 
 

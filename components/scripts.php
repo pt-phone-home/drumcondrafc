@@ -8,3 +8,4 @@
 <script src="js/modal.js"></script>
 <script src="js/modal2.js"></script>
 <script src="js/sidenav.js"></script>
+<script src="js/add.js"></script>

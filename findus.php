@@ -1,50 +1,53 @@
 <html lang="en">
+
 <head>
-    <?php include 'components/head.php';
+	<?php include 'components/head.php';
     ?>
-    <title>Welcome To Drumcondra FC: One Club - One Community</title>
+	<title>Welcome To Drumcondra FC: One Club - One Community</title>
 </head>
+
 <body>
-    
-    <div class="findus-container">
-    
-    <?php include 'components/banner.php'; ?>
 
-    <?php include 'components/header.php'; ?>
+	<div class="findus-container">
 
-    <section class="findus-header">
-    <h1>Our Locations</h1>
-    <i class="far fa-compass"></i>
-    
-    </section>
-    <section class="locations">
+		<?php include 'components/banner.php'; ?>
 
+		<?php include 'components/header.php'; ?>
 
-        <div class="locations-intro">
-            <h2>Drumcondra A.F.C Pitch Locations</h2>
-            <p>The club uses 5 locations around Drumcondra. You will see these indicated on the map below. Click each of the markers on the map for more information and to get directions to the relevant pitch.</p>
-        </div>
+		<section class="findus-header">
+			<h1>Our Locations</h1>
+			<i class="far fa-compass"></i>
 
-        <div class="locations-map" id="map">
-
-        </div>
-
-    
-    
-    </section>
+		</section>
+		<section class="locations">
 
 
-        
-<?php include 'components/footer.php'; ?>
-        
+			<div class="locations-intro">
+				<h2>Drumcondra A.F.C Pitch Locations</h2>
+				<p>The club uses 5 locations around Drumcondra. You will see these indicated on the map below. Click each of the markers
+					on the map for more information and to get directions to the relevant pitch.</p>
+			</div>
+
+			<div class="locations-map" id="map">
+
+			</div>
 
 
 
+		</section>
 
-    </div>
-    
-  
-  <?php include 'components/scripts.php'; ?>
+
+
+		<?php include 'components/footer.php'; ?>
+		<?php include 'components/add.php'; ?>
+
+
+
+
+	</div>
+
+
+	<?php include 'components/scripts.php'; ?>
 
   <script> 
   function initMap() {
