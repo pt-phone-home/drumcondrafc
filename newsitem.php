@@ -1,22 +1,11 @@
 <?php
 	require 'components/database.php';
-
+	require 'components/article.php';
 	$conn = getDB();
 
-	if (isset($_GET['id']) && is_numeric($_GET['id'])) {
-	$sql = "SELECT *
-			FROM news
-			WHERE id=" . $_GET['id'];
-
-	// var_dump($sql);
-
-	$results = mysqli_query($conn, $sql);
-
-	if ($results === FALSE) {
-		echo mysqli_error($conn);
-	} else {
-		$article = mysqli_fetch_assoc($results);
-	}
+	if (isset($_GET['id'])) {
+	
+		$article = getArticle($conn, $_GET['id']);
 
 } else {
 	$article = null;
