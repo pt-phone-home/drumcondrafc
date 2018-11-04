@@ -37,8 +37,9 @@ session_start();
 				</a>
 			</p>
 			<?php else: ?>
-			<p>Your are not logged in
+			<p>Your are not logged in... Please Log in
 				<a href="login.php">Log In</a>
+
 			</p>
 			<?php endif; ?>
 

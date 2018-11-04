@@ -2,6 +2,12 @@
 	require 'components/database.php';
 	require 'components/article.php';
 	require 'components/url.php';
+	require 'components/auth.php';
+	session_start();
+	if (!isLoggedIn()) {
+		die('Unauthorised, please log in through the admin area');
+		
+	}
 	$conn = getDB();
 
 	if (isset($_GET['id'])) {

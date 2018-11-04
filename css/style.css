@@ -1772,7 +1772,7 @@ body {
 
 .admin-content {
   grid-column: 2 / 12;
-  height: 40rem;
+  min-height: 60rem;
   border: 1px solid #000; }
 
 body {
