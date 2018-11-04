@@ -1,0 +1,256 @@
+body {
+  position: relative;
+}
+
+.admin-header {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  min-height: 7rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  align-items: center;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  // position: relative;
+
+  @media (max-width: 940px) {
+    min-height: 5rem;
+  }
+
+  .admin-nav1 {
+    display: grid;
+    grid-template-columns: 20rem;
+    font-size: 1.3rem;
+
+    @media (max-width: 1015px) {
+      font-size: 1.2rem;
+    }
+    @media (max-width: 940px) {
+      display: none;
+    }
+
+    li {
+      list-style: none;
+      padding-bottom: 20px;
+
+      &:hover {
+        border-bottom: 1px solid $color-yellow;
+        padding-bottom: 19px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      padding: 1.5rem;
+      height: 100%;
+      width: 100%;
+    }
+
+    a:hover {
+      color: $color-yellow;
+    }
+  }
+
+  .admin-break {
+    content: "";
+    display: block;
+
+    @media (max-width: 940px) {
+      display: none;
+    }
+  }
+
+  .admin-logo {
+    position: absolute;
+    left: 46%;
+    top: -2rem;
+
+    @media (max-width: 940px) {
+      left: 0;
+    }
+
+    img {
+      // position: absolute;
+      height: 13rem;
+      width: 11rem;
+
+      @media (max-width: 940px) {
+        height: 10rem;
+        width: 8rem;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+
+  .nav2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 1.3rem;
+
+    @media (max-width: 1015px) {
+      font-size: 1.2rem;
+    }
+    @media (max-width: 940px) {
+      display: none;
+    }
+
+    li {
+      list-style: none;
+      padding-bottom: 20px;
+
+      &:hover {
+        border-bottom: 1px solid $color-yellow;
+        padding-bottom: 19px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      padding: 1.5rem;
+      height: 100%;
+      width: 100%;
+    }
+
+    a:hover {
+      color: $color-yellow;
+    }
+  }
+
+  .sidenav-btn {
+    display: none;
+    font-size: 2rem;
+    color: $color-secondary;
+
+    @media (max-width: 940px) {
+      display: block;
+      position: absolute;
+      right: 1rem;
+      top: 1.7rem;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// Drop Down Buttons
+
+.dropdown {
+  position: relative;
+
+  &:hover .dropdown-content {
+    display: block;
+    transition: display 2s ease-in-out;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 15rem;
+  top: 38px;
+  left: -15px;
+  background: lighten($color: $color-navy, $amount: 5%);
+
+  a {
+    padding: 0.7rem;
+    padding-right: 2rem;
+    display: inline-block;
+    width: 100%;
+
+    &:hover {
+      background: lighten($color: $color-navy, $amount: 10%);
+      color: $color-yellow;
+    }
+
+    &:active {
+      background: darken($color: $color-navy, $amount: 10%);
+    }
+  }
+}
+
+// Side Nav
+
+.sidebar-nav {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0rem;
+  width: 70%;
+  height: 100%;
+  z-index: 1000;
+  background-color: $color-primary;
+  padding: 5rem 1rem;
+  font-size: 1.3rem;
+
+  @media (max-width: 630px) {
+    width: 80%;
+  }
+
+  li {
+    position: relative;
+    list-style: none;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 1rem;
+
+    &:hover {
+      border-bottom: 1px solid $color-yellow;
+      padding-bottom: 19px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 1.5rem 24.5rem;
+    height: 100%;
+    width: 100%;
+
+    @media (max-width: 800px) {
+      padding: 1.5rem 20rem;
+    }
+    @media (max-width: 675px) {
+      padding: 1.5rem 18rem;
+    }
+    @media (max-width: 620px) {
+      padding: 1.5rem 16rem;
+    }
+    @media (max-width: 565px) {
+      padding: 1.5rem 14rem;
+    }
+    @media (max-width: 425px) {
+      padding: 1.5rem 12rem;
+    }
+  }
+
+  a:hover {
+    color: $color-yellow;
+  }
+}
+
+.sidebar-nav-close {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  z-index: 2000;
+
+  color: $color-secondary;
+  font-size: 4rem;
+
+  &:hover {
+    color: darken($color: $color-secondary, $amount: 10%);
+    cursor: pointer;
+  }
+}

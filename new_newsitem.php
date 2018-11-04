@@ -1,7 +1,15 @@
 <?php 
 	require 'components/database.php';
+	require 'components/article.php';
+	require 'components/url.php';
+	require 'components/auth.php';
 
-	$errors = [];
+	session_start();
+
+	if (!isLoggedIn()) {
+		die('Unauthorised');
+	}
+
 	$title = '';
 	$headline = '';
 	$content = '';
@@ -14,23 +22,9 @@
 		$content = $_POST['content'];
 		$published_at = $_POST['published_at'];
 
-		if ($title == '') {
-			$errors[] = 'Title is Required';
-		}
-		if ($headline == '') {
-			$errors[] = 'Headline is Required';
-		}
-		if ($content == '') {
-			$errors[] = 'Content is Required';
-		}
+		$errors = validateArticle($title, $headline, $content, $published_at);
 
-		if ($published_at != '') {
-			$date_time = date_create_from_format('Y-m-d H:i:s', $published_at);
-
-			if ($date_time === false) {
-				$errors[] = 'Invalid date and time';
-			}
-		}
+		
 
         if (empty($errors)) {
             $conn = getDB();
@@ -53,15 +47,8 @@
                 if (mysqli_stmt_execute($insert_article_stmt)) {
 					$id = mysqli_insert_id($conn);
 					
-					if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
-						$protocol = 'https';
-					} else {
-						$protocol = 'http';
-					}
-
-					echo "inserted record with the ID:". $id;
-					header("Location: $protocol://" . $_SERVER['HTTP_HOST'] . "/drumcondrafc/newsitem.php?id=$id"); 
-					exit;
+					redirect("/drumcondrafc/newsitem.php?id=$id");
+					
                 } else {
                     echo mysqli_stmt_error($insert_article_stmt);
                 };
@@ -87,7 +74,7 @@
 
 		<?php include 'components/banner.php'; ?>
 
-		<?php include 'components/header.php'; ?>
+		<?php include 'components/admin-header.php'; ?>
 
 		<section class="new_newsitem-intro">
 			<h1>Add new article</h1>

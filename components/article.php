@@ -6,12 +6,14 @@
  * 
  * @param integer $id the article ID
  * 
+ * @param string $columns Optional list of columns for the select, defaults to *
+ * 
  * @return mixed an associative array containing the article with that ID, or null if not found
  * 
  */
 
-function getArticle($conn, $id) {
-    $sql = "SELECT *
+function getArticle($conn, $id, $columns = '*') {
+    $sql = "SELECT $columns
             FROM news
             WHERE id = ?";
 
@@ -28,4 +30,41 @@ function getArticle($conn, $id) {
             return mysqli_fetch_array($result, MYSQLI_ASSOC);
         }
     }
+}
+
+
+/**
+ * Validate the Article Properties 
+ * 
+ * @param string $title Title, required
+ * @param string $headline Headline, required
+ * @param string $content Content, required
+ * @param string $published_at Published date, not required
+ * 
+ * 
+ * @return array an array of validated error messages
+ */
+
+function validateArticle($title, $headline, $content, $published_at) {
+    $errors = [];
+    
+    if ($title == '') {
+        $errors[] = 'Title is Required';
+    }
+    if ($headline == '') {
+        $errors[] = 'Headline is Required';
+    }
+    if ($content == '') {
+        $errors[] = 'Content is Required';
+    }
+
+    if ($published_at != '') {
+        $date_time = date_create_from_format('Y-m-d H:i:s', $published_at);
+
+        if ($date_time === false) {
+            $errors[] = 'Invalid date and time';
+        }
+    }
+
+    return $errors;
 }

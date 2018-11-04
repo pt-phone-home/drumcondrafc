@@ -153,6 +153,7 @@
     border-radius: 5px;
     text-decoration: none;
     font-size: 1.2rem;
+    z-index: 4000;
 
     &:hover {
       background: lighten($color: $color-navy, $amount: 10%);

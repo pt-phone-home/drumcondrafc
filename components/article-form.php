@@ -26,4 +26,5 @@
 		<input type="datetime-local" name="published_at" id="published_at" value="<?= htmlspecialchars($published_at) ;?>">
 	</div>
 	<button>Save</button>
+	<a href="admin-page.php">Go Back</a>
 </form>

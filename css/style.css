@@ -553,7 +553,8 @@ body {
     padding: 0.85rem 0.85rem;
     border-radius: 5px;
     text-decoration: none;
-    font-size: 1.2rem; }
+    font-size: 1.2rem;
+    z-index: 4000; }
     .card-footer a:hover {
       background: #373f9b; }
 
@@ -1762,4 +1763,201 @@ body {
     height: 3.5rem;
     background-color: #2a3075;
     color: #f9ec37;
+    cursor: pointer; }
+
+.admin-container {
+  display: grid;
+  grid-template-columns: 7rem repeat(10, 1fr) 7rem;
+  grid-template-rows: auto; }
+
+.admin-content {
+  grid-column: 2 / 12;
+  height: 40rem;
+  border: 1px solid #000; }
+
+body {
+  position: relative; }
+
+.admin-header {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  min-height: 7rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  align-items: center;
+  padding-left: 2rem;
+  margin-bottom: 1rem; }
+  @media (max-width: 940px) {
+    .admin-header {
+      min-height: 5rem; } }
+  .admin-header .admin-nav1 {
+    display: grid;
+    grid-template-columns: 20rem;
+    font-size: 1.3rem; }
+    @media (max-width: 1015px) {
+      .admin-header .admin-nav1 {
+        font-size: 1.2rem; } }
+    @media (max-width: 940px) {
+      .admin-header .admin-nav1 {
+        display: none; } }
+    .admin-header .admin-nav1 li {
+      list-style: none;
+      padding-bottom: 20px; }
+      .admin-header .admin-nav1 li:hover {
+        border-bottom: 1px solid #f9ec37;
+        padding-bottom: 19px; }
+    .admin-header .admin-nav1 a {
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      padding: 1.5rem;
+      height: 100%;
+      width: 100%; }
+    .admin-header .admin-nav1 a:hover {
+      color: #f9ec37; }
+  .admin-header .admin-break {
+    content: "";
+    display: block; }
+    @media (max-width: 940px) {
+      .admin-header .admin-break {
+        display: none; } }
+  .admin-header .admin-logo {
+    position: absolute;
+    left: 46%;
+    top: -2rem; }
+    @media (max-width: 940px) {
+      .admin-header .admin-logo {
+        left: 0; } }
+    .admin-header .admin-logo img {
+      height: 13rem;
+      width: 11rem; }
+      @media (max-width: 940px) {
+        .admin-header .admin-logo img {
+          height: 10rem;
+          width: 8rem;
+          transition: all 0.2s ease-in-out; } }
+  .admin-header .nav2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 1.3rem; }
+    @media (max-width: 1015px) {
+      .admin-header .nav2 {
+        font-size: 1.2rem; } }
+    @media (max-width: 940px) {
+      .admin-header .nav2 {
+        display: none; } }
+    .admin-header .nav2 li {
+      list-style: none;
+      padding-bottom: 20px; }
+      .admin-header .nav2 li:hover {
+        border-bottom: 1px solid #f9ec37;
+        padding-bottom: 19px; }
+    .admin-header .nav2 a {
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      padding: 1.5rem;
+      height: 100%;
+      width: 100%; }
+    .admin-header .nav2 a:hover {
+      color: #f9ec37; }
+  .admin-header .sidenav-btn {
+    display: none;
+    font-size: 2rem;
+    color: #f9ec37; }
+    @media (max-width: 940px) {
+      .admin-header .sidenav-btn {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 1.7rem; }
+        .admin-header .sidenav-btn:hover {
+          transform: scale(1.1);
+          transition: all 0.3s ease-in-out;
+          cursor: pointer; } }
+
+.dropdown {
+  position: relative; }
+  .dropdown:hover .dropdown-content {
+    display: block;
+    transition: display 2s ease-in-out; }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 15rem;
+  top: 38px;
+  left: -15px;
+  background: #313888; }
+  .dropdown-content a {
+    padding: 0.7rem;
+    padding-right: 2rem;
+    display: inline-block;
+    width: 100%; }
+    .dropdown-content a:hover {
+      background: #373f9b;
+      color: #f9ec37; }
+    .dropdown-content a:active {
+      background: #1d214f; }
+
+.sidebar-nav {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0rem;
+  width: 70%;
+  height: 100%;
+  z-index: 1000;
+  background-color: #2a3075;
+  padding: 5rem 1rem;
+  font-size: 1.3rem; }
+  @media (max-width: 630px) {
+    .sidebar-nav {
+      width: 80%; } }
+  .sidebar-nav li {
+    position: relative;
+    list-style: none;
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 1rem; }
+    .sidebar-nav li:hover {
+      border-bottom: 1px solid #f9ec37;
+      padding-bottom: 19px; }
+  .sidebar-nav a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 1.5rem 24.5rem;
+    height: 100%;
+    width: 100%; }
+    @media (max-width: 800px) {
+      .sidebar-nav a {
+        padding: 1.5rem 20rem; } }
+    @media (max-width: 675px) {
+      .sidebar-nav a {
+        padding: 1.5rem 18rem; } }
+    @media (max-width: 620px) {
+      .sidebar-nav a {
+        padding: 1.5rem 16rem; } }
+    @media (max-width: 565px) {
+      .sidebar-nav a {
+        padding: 1.5rem 14rem; } }
+    @media (max-width: 425px) {
+      .sidebar-nav a {
+        padding: 1.5rem 12rem; } }
+  .sidebar-nav a:hover {
+    color: #f9ec37; }
+
+.sidebar-nav-close {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  z-index: 2000;
+  color: #f9ec37;
+  font-size: 4rem; }
+  .sidebar-nav-close:hover {
+    color: #f6e607;
     cursor: pointer; }

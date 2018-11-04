@@ -1,5 +1,7 @@
 <?php
 	require 'components/database.php';
+	require 'components/article.php';
+	require 'components/url.php';
 	// NEWS QUERY
 
 	$conn = getDB();

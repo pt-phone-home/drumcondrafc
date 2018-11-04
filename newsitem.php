@@ -56,6 +56,8 @@
 				</div>
 				<div class="news-item-full-footer">
 					<a href="news.php">Back to news</a>
+					<a href="edit_newsitem.php?id=<?= $article['id']?>">Edit</a>
+					<a href="delete-article.php?id=<?= $article['id']?>">Delete</a>
 				</div>
 			</div>
 			<?php endif; ?>

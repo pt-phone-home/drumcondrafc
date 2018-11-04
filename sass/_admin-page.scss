@@ -1,0 +1,11 @@
+.admin-container {
+  display: grid;
+  grid-template-columns: 7rem repeat(10, 1fr) 7rem;
+  grid-template-rows: auto;
+}
+
+.admin-content {
+  grid-column: 2 / 12;
+  height: 40rem;
+  border: 1px solid #000;
+}
