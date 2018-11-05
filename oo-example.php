@@ -23,4 +23,33 @@
 
 // $item4 = new Item();
 
+
 $item5 = new Item('Suzanne', 'Nurse');
+
+var_dump($item5->getName());
+
+$item5->setName('Sue');
+
+var_dump($item5->getName());
+
+$item6 = new Item('Peter', 'Lecturer');
+
+Item::showCount();
+
+define('MAXIMUM', '100');
+define('COLOUR', 'red');
+
+echo MAXIMUM;
+
+echo Item::MAX_LENGTH;
+
+$newproduct = new Product();
+$newproduct->name = 'TV';
+
+echo $newproduct->getProductDescription();
+
+$newbook = new Book();
+$newbook->name = 'Bio';
+$newbook->author = 'Peter Tiernan';
+echo $newbook->getProductDescription();
+echo $newbook->getCode();

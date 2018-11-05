@@ -1,20 +1,11 @@
 <?php
-	require 'components/database.php';
+	require 'classes/Database.php';
+	require 'classes/Article.php';
+	$db = new Database();
+	$conn = $db->getConn();
+
+	$articles = Article::getALL($conn);
 	
-	$conn = getDB();
-
-	$sql = "SELECT *
-			FROM news
-			ORDER BY published_at DESC
-			LIMIT 10";
-
-	$results = mysqli_query($conn, $sql);
-
-	if ($results === FALSE) {
-		echo mysqli_error($conn);
-	} else {
-		$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
-	}
 
 ?>
 

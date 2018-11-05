@@ -1,47 +1,32 @@
 <?php
-	require 'components/database.php';
-	require 'components/article.php';
+	require 'classes/Database.php';
+	require 'classes/Article.php';
 	require 'components/url.php';
 	require 'components/auth.php';
 	session_start();
+
 	if (!isLoggedIn()) {
 		die('Unauthorised, please log in through the admin area');
 		
 	}
-	$conn = getDB();
+	$db = new Database();
+	$conn = $db->getConn();
 
 	if (isset($_GET['id'])) {
 	
-		$article = getArticle($conn, $_GET['id'], 'id');
+		$article = Article::getByID($conn, $_GET['id']);
 
-        if ($article) {
-
-			$id = $article['id'];
-            
-        } else {
+        if (! $article) {
 			die("article not found");	
-		}
+			}
 
 } else {
 	die("id not supplied, article not found");
 }
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $delete_article_sql = "DELETE FROM news 
-                        WHERE id = ?";
-
-
-    $delete_article_stmt = mysqli_prepare($conn, $delete_article_sql);
-
-    if ($delete_article_stmt === false) {
-        echo mysqli_error($conn);
-    } else {
-        mysqli_stmt_bind_param($delete_article_stmt, "i", $id);
-
-        if (mysqli_stmt_execute($delete_article_stmt)) {
-            redirect("/drumcondrafc/news.php");
-        } else {
-            echo mysqli_stmt_error($delete_article_stmt);
-        };
+    if ($article->delete($conn)) {
+        redirect("/drumcondrafc/news.php");
     }
 }
 ?>
@@ -70,9 +55,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		<form method="POST">
 			<p>Are you sure?</p>
 			<button>DELETE</button>
-			<a href="newsitem.php?id=<?= $article['id'];?>"> Cancel </a>
+			<a href="newsitem.php?id=<?= $article->id;?>"> Cancel </a>
 		</form>
-		<a href="delete-article.php?id=<?= $article['id'];?>">Delete</a>
+		<a href="delete-article.php?id=<?= $article->id;?>">Delete</a>
 
 
 		<?php include 'components/footer.php'; 

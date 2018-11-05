@@ -1,6 +1,6 @@
 <?php 
-	require 'components/database.php';
-	require 'components/article.php';
+	require 'classes/Database.php';
+	require 'classes/Article.php';
 	require 'components/url.php';
 	require 'components/auth.php';
 
@@ -10,50 +10,21 @@
 		die('Unauthorised');
 	}
 
-	$title = '';
-	$headline = '';
-	$content = '';
-	$published_at = '';
+$article = new Article();
 
  if ($_SERVER['REQUEST_METHOD']== 'POST') {
 
-		$title = $_POST['title'];
-		$headline = $_POST['headline'];
-		$content = $_POST['content'];
-		$published_at = $_POST['published_at'];
+	$db = new Database();
+	$conn = $db->getConn();
 
-		$errors = validateArticle($title, $headline, $content, $published_at);
-
-		
-
-        if (empty($errors)) {
-            $conn = getDB();
+	$article->title = $_POST['title'];
+	$article->headline = $_POST['headline'];
+	$article->content = $_POST['content'];
+	$article->published_at = $_POST['published_at'];
     
-            $insert_article_sql = "INSERT INTO news (title, headline, content, published_at)
-							VALUES (?, ?, ?, ?)";
-
-            $insert_article_stmt = mysqli_prepare($conn, $insert_article_sql);
-    
-            if ($insert_article_stmt === false) {
-                echo mysqli_error($conn);
-            } else {
-
-				if ($published_at == '') {
-					$published_at = null;
-				}
-
-                mysqli_stmt_bind_param($insert_article_stmt, "ssss", $title, $headline, $content, $published_at);
-
-                if (mysqli_stmt_execute($insert_article_stmt)) {
-					$id = mysqli_insert_id($conn);
-					
-					redirect("/drumcondrafc/newsitem.php?id=$id");
-					
-                } else {
-                    echo mysqli_stmt_error($insert_article_stmt);
-                };
-            }
-        }
+		if ($article->create($conn)) {
+			redirect("/drumcondrafc/newsitem.php?id={$article->id}");
+		}
 								
 	}
 

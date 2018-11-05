@@ -1,23 +1,14 @@
 <?php
-	require 'components/database.php';
-	require 'components/article.php';
+	require 'classes/Database.php';
+	require 'classes/Article.php';
 	require 'components/url.php';
 	// NEWS QUERY
 
-	$conn = getDB();
+	$db = new Database();
+	$conn = $db->getConn();
 
-	$sql = "SELECT *
-			FROM news
-			ORDER BY published_at DESC
-			LIMIT 6";
+	$articles = Article::getAll($conn);
 
-	$results = mysqli_query($conn, $sql);
-
-	if ($results === FALSE) {
-		echo mysqli_error($conn);
-	} else {
-		$articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
-	}
 
 	// FEATURED FIXTURE QUERY
 	$featured_fixture_sql = "SELECT *
@@ -25,12 +16,12 @@
 							ORDER BY id DESC
 							LIMIT 1";
 
-	$featured_fixture_result = mysqli_query($conn, $featured_fixture_sql);
+	$featured_fixture_result = $conn->query($featured_fixture_sql);
 
 	if ($featured_fixture_result === FALSE) {
-		echo mysqli_error($conn);
+		echo $conn->errorInfo();
 	} else {
-		$feat_fixture = mysqli_fetch_all($featured_fixture_result, MYSQLI_ASSOC);
+		$feat_fixture = $featured_fixture_result->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 	// FEATURED RESULT QUERY
@@ -39,12 +30,12 @@
 							ORDER BY id DESC
 							LIMIT 1";
 		
-	$featured_score_result = mysqli_query($conn, $featured_score_sql);
+	$featured_score_result = $conn->query($featured_score_sql);
 
 	if ($featured_score_result === FALSE) {
-		echo mysqli_error($conn);
+		echo $conn->errorInfo();
 	} else {
-		$feat_result = mysqli_fetch_all($featured_score_result, MYSQLI_ASSOC);
+		$feat_result = $featured_score_result->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 ?>

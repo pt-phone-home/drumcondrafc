@@ -1,11 +1,12 @@
 <?php
-	require 'components/database.php';
-	require 'components/article.php';
-	$conn = getDB();
+	require 'classes/Database.php';
+	require 'classes/Article.php';
+	$db = new Database();
+	$conn = $db->getConn();
 
 	if (isset($_GET['id'])) {
 	
-		$article = getArticle($conn, $_GET['id']);
+		$article = Article::getByID($conn, $_GET['id']);
 
 } else {
 	$article = null;
@@ -39,27 +40,29 @@
 		</div>
 
 		<div class="section-newsitem">
-			<?php if ($article === null): ?>
-			<p>News Item not found!</p>
-			<?php else: ?>
+			<?php if ($article): ?>
 			<div class="news-item-full">
 				<h1>
-					<?= htmlspecialchars($article['title'])?>
+					<?= htmlspecialchars($article->title); ?>
 				</h1>
 				<div class="news-item-full-img">
-					<img src="img/uploads/<?= $article['img'];?>" alt="">
+					<img src="img/uploads/<?= $article->img;?>" alt="">
 				</div>
 				<div class="news-item-full-content">
 					<p>
-						<?= htmlspecialchars($article['content'])?>
+						<?= htmlspecialchars($article->content); ?>
 					</p>
 				</div>
 				<div class="news-item-full-footer">
 					<a href="news.php">Back to news</a>
-					<a href="edit_newsitem.php?id=<?= $article['id']?>">Edit</a>
-					<a href="delete-article.php?id=<?= $article['id']?>">Delete</a>
+					<a href="edit_newsitem.php?id=<?= $article->id;?>">Edit</a>
+					<a href="delete-article.php?id=<?= $article->id;?>">Delete</a>
 				</div>
 			</div>
+
+			<?php else: ?>
+			<p>News Item not found!</p>
+
 			<?php endif; ?>
 
 		</div>

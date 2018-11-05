@@ -15,5 +15,4 @@ sideNavBtn.onclick = function() {
 
 sideNavClose.onclick = function() {
   sideNavMenu.style.display = "none";
-  console.log("test");
 };
