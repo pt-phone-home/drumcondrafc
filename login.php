@@ -1,15 +1,16 @@
 <?php
-require 'components/url.php';
-session_start();
+require 'components/init.php';
 
 // $_SESSION['is_logged_in'] = true;
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-    if ($_POST['username'] == 'peter' && $_POST['password'] == 'hello') {
-        session_regenerate_id(true);
-        $_SESSION['is_logged_in'] = true;
-        redirect("/drumcondrafc/admin-page.php");
+	
+	$conn = require 'components/db.php';
+
+    if (User::authenticate($conn, $_POST['username'], $_POST['password'])) {
+        Auth::login();
+        Url::redirect("/drumcondrafc/admin-page.php");
     } else {
         $error = 'login incorrect';
     }

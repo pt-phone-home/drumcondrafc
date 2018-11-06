@@ -1,16 +1,9 @@
 <?php
-	require 'classes/Database.php';
-	require 'classes/Article.php';
-	require 'components/url.php';
-	require 'components/auth.php';
-	session_start();
+	require 'components/init.php';
 
-	if (!isLoggedIn()) {
-		die('Unauthorised, please log in through the admin area');
-		
-	}
-	$db = new Database();
-	$conn = $db->getConn();
+	Auth::requireLogin();
+
+	$conn = require 'components/db.php';
 
 	if (isset($_GET['id'])) {
 	
@@ -26,7 +19,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($article->delete($conn)) {
-        redirect("/drumcondrafc/news.php");
+        Url::redirect("/drumcondrafc/news.php");
     }
 }
 ?>

@@ -1,5 +1,13 @@
-<?php 
+<?php
+
 /**
+ * URL
+ * 
+ * Response Methods
+ */
+
+class Url{
+    /**
  * Redirect to another URL on the same site
  * 
  * @param string $path The path to redirect to 
@@ -8,7 +16,7 @@
  */
 
 
-function redirect($path) {
+public static function redirect($path) {
     if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
         $protocol = 'https';
     } else {
@@ -18,4 +26,5 @@ function redirect($path) {
     echo "inserted record with the ID:". $id;
     header("Location: $protocol://" . $_SERVER['HTTP_HOST'] . $path); 
     exit;
+}
 }

@@ -1,18 +1,7 @@
 <?php
-require 'components/url.php';
-session_start();
+require 'components/init.php';
 
-$_SESSION = array();
+Auth::logout();
 
-if (ini_get("session.use_cookies")) {
-    $params = session_get_cookie_params();
-    setcookie(session_name(), '', time() - 4200,
-        $params['path'], $params['domain'], 
-        $params['secure'], $params['httponly']
-);
-};
-
-session_destroy();
-
-redirect("/drumcondrafc/home.php");
+Url::redirect("/drumcondrafc/home.php");
 

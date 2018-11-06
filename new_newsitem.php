@@ -1,21 +1,13 @@
 <?php 
-	require 'classes/Database.php';
-	require 'classes/Article.php';
-	require 'components/url.php';
-	require 'components/auth.php';
+	require 'components/init.php';
 
-	session_start();
-
-	if (!isLoggedIn()) {
-		die('Unauthorised');
-	}
+	Auth::requireLogin();
 
 $article = new Article();
 
  if ($_SERVER['REQUEST_METHOD']== 'POST') {
 
-	$db = new Database();
-	$conn = $db->getConn();
+	$conn = require 'components/db.php';
 
 	$article->title = $_POST['title'];
 	$article->headline = $_POST['headline'];
@@ -23,7 +15,7 @@ $article = new Article();
 	$article->published_at = $_POST['published_at'];
     
 		if ($article->create($conn)) {
-			redirect("/drumcondrafc/newsitem.php?id={$article->id}");
+			Url::redirect("/drumcondrafc/newsitem.php?id={$article->id}");
 		}
 								
 	}

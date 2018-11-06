@@ -1,13 +1,11 @@
 <?php 
-require 'components/auth.php';
-session_start(); 
-	
+require '../components/init.php';
 
 ?>
 <html lang="en">
 
 <head>
-	<?php include 'components/head.php';
+	<?php include '../components/head.php';
     ?>
 	<title>Drumcondra FC Admin Panel</title>
 </head>
@@ -16,13 +14,13 @@ session_start();
 
 	<div class="admin-container">
 
-		<?php include 'components/banner.php'; ?>
+		<?php include '../components/banner.php'; ?>
 
-		<?php include 'components/admin-header.php'; ?>
+		<?php include '../components/admin-header.php'; ?>
 
 
 		<div class="admin-content">
-			<?php if (isLoggedIn()): ?>
+			<?php if (Auth::isLoggedIn()): ?>
 			<p>You are loggin.
 				<a href="logout.php">Log out</a>
 			</p>
@@ -49,7 +47,7 @@ session_start();
 
 
 
-		<?php include 'components/footer.php'; 
+		<?php include '../components/footer.php'; 
         ?>
 
 
@@ -58,7 +56,7 @@ session_start();
 	</div>
 
 
-	<?php include 'components/scripts.php'; ?>
+	<?php include '../components/scripts.php'; ?>
     <script>
 
     

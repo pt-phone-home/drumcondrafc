@@ -1,11 +1,8 @@
 <?php
-	require 'classes/Database.php';
-	require 'classes/Article.php';
-	require 'components/url.php';
+	require 'components/init.php';
 	// NEWS QUERY
 
-	$db = new Database();
-	$conn = $db->getConn();
+	$conn = require 'components/db.php';
 
 	$articles = Article::getAll($conn);
 
