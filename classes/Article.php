@@ -11,6 +11,7 @@ class Article {
     public $title;
     public $headline;
     public $content;
+    public $img;
     public $published_at;
     public $errors = [];
 /**
@@ -99,6 +100,7 @@ class Article {
 				SET title = :title,
                     headline = :headline,
                     content = :content,
+                    img = :img,
                     published_at = :published_at
                 WHERE id = :id";
 
@@ -115,6 +117,12 @@ class Article {
                 $stmt->bindValue(':published_at', $this->published_at, PDO::PARAM_STR);
             }
 
+            if ($this->img == '') {
+                $stmt->bindValue(':img', null, PDO::PARAM_NULL);
+            } else {
+                $stmt->bindValue(':img', $this->img, PDO::PARAM_STR);
+            }
+
             return $stmt->execute();
         } else {
             return false;
@@ -122,12 +130,12 @@ class Article {
     }
 
     /**
- * Validate the Article Properties 
- *  
- * @return boolean True if the current properties are valid, false if not
- */
+    * Validate the Article Properties 
+    *  
+    * @return boolean True if the current properties are valid, false if not
+    */
 
- protected function validate() {
+    protected function validate() {
    
     
     if ($this->title == '') {
@@ -150,13 +158,13 @@ class Article {
 
     return empty($this->errors);
 }
-/**
- * Delete Current Article 
- * 
- * @param object $conn Connection to database
- * 
- * @return boolean True if the delete was successful, false otherwise
- */
+    /**
+     * Delete Current Article 
+     * 
+     * @param object $conn Connection to database
+     * 
+     * @return boolean True if the delete was successful, false otherwise
+    */
     public function delete($conn) {
         $sql = "DELETE FROM news 
                 WHERE id = :id";
@@ -168,36 +176,69 @@ class Article {
             return $stmt->execute();
     }
 
-/**
- * Update the article with its current property values
- * 
- * @param object $conn Connection to the database
- * 
- * @return boolean True if the insert was successful, false otherwise
- */
-public function create($conn) {
-    if ($this->validate()) {
-        $sql = "INSERT INTO news (title, headline, content, published_at)
-                VALUES (:title, :headline, :content, :published_at)";
+    /**
+     * Update the article with its current property values
+     * 
+     * @param object $conn Connection to the database
+     * 
+     * @return boolean True if the insert was successful, false otherwise
+     */
+    public function create($conn) {
+        if ($this->validate()) {
+            $sql = "INSERT INTO news (title, headline, content, published_at)
+                    VALUES (:title, :headline, :content, :published_at)";
+
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bindValue(':title', $this->title, PDO::PARAM_STR);
+            $stmt->bindValue(':headline', $this->headline, PDO::PARAM_STR);
+            $stmt->bindValue(':content', $this->content, PDO::PARAM_STR);
+        
+            if ($this->published_at == '') {
+                $stmt->bindValue(':published_at', null, PDO::PARAM_NULL);
+            } else {
+                $stmt->bindValue(':published_at', $this->published_at, PDO::PARAM_STR);
+            }
+            if ($stmt->execute()) {
+                $this->id = $conn->lastInsertId();
+                return true;
+            }
+        } else {
+            return false;
+        }
+    }
+    /**
+     * Get a count of the total number of records
+     * 
+     * @param object $conn Connection to the database
+     * 
+     * @return integer Total number of records
+     */
+    public static function getTotal($conn) {
+        return $conn->query('SELECT COUNT(*) FROM news')->fetchColumn();
+    }
+
+    /**
+     * Update the image property 
+     * 
+     * @param object $conn Connection to the database
+     * @param string $filename The filename of the image
+     * 
+     * @return boolean True if it was successful, false otherwise
+     */
+    public function setImageFile($conn, $filename) {
+        $sql = "UPDATE news
+                SET img = :img
+                WHERE id = :id";
 
         $stmt = $conn->prepare($sql);
 
-        $stmt->bindValue(':title', $this->title, PDO::PARAM_STR);
-        $stmt->bindValue(':headline', $this->headline, PDO::PARAM_STR);
-        $stmt->bindValue(':content', $this->content, PDO::PARAM_STR);
-    
-        if ($this->published_at == '') {
-            $stmt->bindValue(':published_at', null, PDO::PARAM_NULL);
-        } else {
-            $stmt->bindValue(':published_at', $this->published_at, PDO::PARAM_STR);
-        }
-        if ($stmt->execute()) {
-            $this->id = $conn->lastInsertId();
-            return true;
-        }
-    } else {
-        return false;
+        $stmt->bindValue(':id', $this->id, PDO::PARAM_INT);
+        $stmt->bindValue(':img', $filename, PDO::PARAM_STR);
+
+        return $stmt->execute();
+
+
     }
-}
 
 }

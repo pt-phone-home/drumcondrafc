@@ -4,11 +4,11 @@
 
 	$conn = require 'components/db.php';
 
-	$paginator = new Paginator(1, 6);
+	$paginator = new Paginator(1, 6, Article::getTotal($conn));
 
 	$articles = Article::getPage($conn, $paginator->limit, $paginator->offset);
 
-	$feat_paginator = new Paginator(1, 4);
+	$feat_paginator = new Paginator(1, 4, Article::getTotal($conn));
 
 	$feat_articles = Article::getPage($conn, $feat_paginator->limit, $feat_paginator->offset);
 

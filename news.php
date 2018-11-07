@@ -5,9 +5,9 @@
 	$conn = $db->getConn();
 // GETTING THE NEWS QUERY WITH PAGINATOR
 	if (isset($_GET['page'])) {
-		$paginator = new Paginator($_GET['page'], 3);
+		$paginator = new Paginator($_GET['page'], 3, Article::getTotal($conn));
 	} else {
-		$paginator = new Paginator(1, 3);
+		$paginator = new Paginator(1, 3, Article::getTotal($conn));
 	}
 	$articles = Article::getPage($conn, $paginator->limit, $paginator->offset);
 	
@@ -45,7 +45,11 @@
 					<?= htmlspecialchars($article['title'])?>
 				</h1>
 				<div class="news-item-img">
+					<?php if ($article['img']) :?>
 					<img src="img/uploads/<?= $article['img'];?>" alt="">
+					<?php else :?>
+					<img src="img/uploads/default.jpg" alt="">
+					<?php endif; ?>
 				</div>
 				<div class="news-item-content">
 					<?= htmlspecialchars($article['content'])?>
@@ -55,13 +59,7 @@
 				</div>
 			</div>
 			<?php endforeach; ?>
-			<?php if ($paginator->previous_page):?>
-			<a href="?page=<?= $paginator->previous_page;?>">Previous</a>
-			<?php else: ?>
-			Previous
-			<?php endif ;?>
-
-			<a href="?page=<?= $paginator->next_page;?>">Next</a>
+			<?php require 'components/pagination.php'; ?>
 		</div>
 
 		<?php include 'components/footer.php'; ?>

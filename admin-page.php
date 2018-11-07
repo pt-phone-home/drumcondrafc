@@ -4,7 +4,14 @@ require 'components/init.php';
 	$db = new Database();
 	$conn = $db->getConn();
 
-	$articles = Article::getALL($conn);
+	if (isset($_GET['page'])) {
+		$paginator = new Paginator($_GET['page'], 10, Article::getTotal($conn));
+	} else {
+		$paginator = new Paginator(1, 10, Article::getTotal($conn));
+	}
+	$articles = Article::getPage($conn, $paginator->limit, $paginator->offset);
+
+	//$articles = Article::getALL($conn);
 ?>
 <html lang="en">
 
@@ -34,7 +41,7 @@ require 'components/init.php';
 				<thead>
 					<th>Title</th>
 					<th>Published/Updated Date</th>
-					<th colspan=2>Admin Options</th>
+					<th colspan=3>Admin Options</th>
 				</thead>
 				<tbody>
 					<?php foreach ($articles as $article): ?>
@@ -54,11 +61,15 @@ require 'components/init.php';
 						<td>
 							<a href="delete-article.php?id=<?= $article['id'];?>">Delete</a>
 						</td>
+						<td>
+							<a href="edit_newsitem_image.php?id=<?= $article['id'];?>">Edit Image</a>
+						</td>
 
 					</tr>
 					<?php endforeach; ?>
 				</tbody>
 			</table>
+			<?php require 'components/pagination.php'; ?>
 
 			<p>
 				<a href="new_newsitem.php">
