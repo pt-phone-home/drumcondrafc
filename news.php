@@ -3,10 +3,14 @@
 
 	$db = new Database();
 	$conn = $db->getConn();
-
-	$articles = Article::getALL($conn);
+// GETTING THE NEWS QUERY WITH PAGINATOR
+	if (isset($_GET['page'])) {
+		$paginator = new Paginator($_GET['page'], 3);
+	} else {
+		$paginator = new Paginator(1, 3);
+	}
+	$articles = Article::getPage($conn, $paginator->limit, $paginator->offset);
 	
-
 ?>
 
 
@@ -51,7 +55,13 @@
 				</div>
 			</div>
 			<?php endforeach; ?>
+			<?php if ($paginator->previous_page):?>
+			<a href="?page=<?= $paginator->previous_page;?>">Previous</a>
+			<?php else: ?>
+			Previous
+			<?php endif ;?>
 
+			<a href="?page=<?= $paginator->next_page;?>">Next</a>
 		</div>
 
 		<?php include 'components/footer.php'; ?>

@@ -19,7 +19,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($article->delete($conn)) {
-        Url::redirect("/drumcondrafc/news.php");
+        Url::redirect("/drumcondrafc/admin-page.php");
     }
 }
 ?>

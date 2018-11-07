@@ -4,8 +4,13 @@
 
 	$conn = require 'components/db.php';
 
-	$articles = Article::getAll($conn);
+	$paginator = new Paginator(1, 6);
 
+	$articles = Article::getPage($conn, $paginator->limit, $paginator->offset);
+
+	$feat_paginator = new Paginator(1, 4);
+
+	$feat_articles = Article::getPage($conn, $feat_paginator->limit, $feat_paginator->offset);
 
 	// FEATURED FIXTURE QUERY
 	$featured_fixture_sql = "SELECT *
@@ -57,7 +62,7 @@
 		<section class="news_and_fixtures">
 
 			<div class="news_and_fixtures-news carousel">
-				<?php foreach ($articles as $article): ?>
+				<?php foreach ($feat_articles as $article): ?>
 				<a href="newsitem.php?id=<?=$article['id']; ?>">
 					<div class="slide fade">
 						<img src="img/uploads/<?= $article['img'];?>" alt="" class="slide-img">
