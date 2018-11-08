@@ -21,7 +21,6 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    var_dump($_FILES);
     try {
 
         if (empty($_FILES)) {
@@ -90,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        }
 
     } catch (Exception $e) {
-        echo $e->getMessage();
+        $error = $e->getMessage();
     }
 }
 ?>
@@ -114,6 +113,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<section class="new_newsitem-intro">
 			<h1>Edit article Image</h1>
 		</section>
+		<?php if (isset($error)):?>
+		<p>
+			<?= $error ;?>
+		</p>
+		<?php endif ; ?>
 		<section class="form-container">
 
 			<form method="POST" enctype="multipart/form-data" class="contact-form">

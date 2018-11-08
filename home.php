@@ -202,7 +202,11 @@
 				<?php foreach ($articles as $article): ?>
 				<div class="card card-large border-top-navy">
 					<div class="card-image">
+						<?php if ($article['img']) :?>
 						<img src="img/uploads/<?= $article['img'];?>" alt="">
+						<?php else:?>
+						<img src="img/uploads/default.jpg" alt="">
+						<?php endif ; ?>
 					</div>
 					<div class="card-content card-content-plain">
 						<h4>
