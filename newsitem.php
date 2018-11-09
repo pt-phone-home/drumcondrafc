@@ -47,11 +47,7 @@
 				</h1>
 
 				<div class="news-item-full-img">
-					<?php if ($article->img):?>
 					<img src="img/uploads/<?= $article->img;?>" alt="">
-					<?php else :?>
-					<img src="img/uploads/default.jpg" alt="">
-					<?php endif ;?>
 				</div>
 				<div class="news-item-full-content">
 					<p>

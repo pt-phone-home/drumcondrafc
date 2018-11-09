@@ -65,7 +65,11 @@
 				<?php foreach ($feat_articles as $article): ?>
 				<a href="newsitem.php?id=<?=$article['id']; ?>">
 					<div class="slide fade">
+						<?php if ($article['img']): ?>
 						<img src="img/uploads/<?= $article['img'];?>" alt="" class="slide-img">
+						<?php else :?>
+						<img src="img/uploads/default.jpg" alt="" class="slide-img">
+						<?php endif ;?>
 						<h1 class="slide-headline from-left">
 							<?= htmlspecialchars($article['title']); ?>
 						</h1>

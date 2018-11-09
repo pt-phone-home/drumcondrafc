@@ -5,19 +5,31 @@
 
 $article = new Article();
 
- if ($_SERVER['REQUEST_METHOD']== 'POST') {
-
+ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+// Capture Text data from Form
 	$conn = require 'components/db.php';
 
 	$article->title = $_POST['title'];
 	$article->headline = $_POST['headline'];
 	$article->content = $_POST['content'];
-	$article->published_at = $_POST['published_at'];
+	$filename = $_FILES['image']['name'];
+
+	$destination = "img/uploads/$filename";
+
+	move_uploaded_file($_FILES['image']['tmp_name'], $destination);
+
+	$article->img = $filename;
+
+
+
+
+	// $article->published_at = $_POST['published_at'];
     
 		if ($article->create($conn)) {
 			Url::redirect("/drumcondrafc/newsitem.php?id={$article->id}");
 		}
-								
+			
+
 	}
 
 ?>
@@ -69,10 +81,14 @@ $article = new Article();
 
 
 	<?php include 'components/scripts.php'; ?>
-    <script>
-
     
-    </script>
+	<script>
+		var quill = new Quill('#editor', {
+		theme: 'snow'
+		});
+	</script>
+    
+  
   
 </body>
 </html>

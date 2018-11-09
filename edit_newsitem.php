@@ -23,6 +23,14 @@ if ($_SERVER['REQUEST_METHOD']== 'POST') {
 	$article->headline = $_POST['headline'];
 	$article->content = $_POST['content'];
 	$article->published_at = $_POST['published_at'];
+	$filename = $_FILES['image']['name'];
+
+	$destination = "img/uploads/$filename";
+
+	move_uploaded_file($_FILES['image']['tmp_name'], $destination);
+
+	$article->img = $filename;
+
     
 	if ($article->update($conn)) {
 		Url::redirect("/drumcondrafc/newsitem.php?id={$article->id}");

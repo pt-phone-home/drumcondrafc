@@ -118,7 +118,7 @@ class Article {
             }
 
             if ($this->img == '') {
-                $stmt->bindValue(':img', null, PDO::PARAM_NULL);
+                $stmt->bindValue(':img', 'default.jpg', PDO::PARAM_STR);
             } else {
                 $stmt->bindValue(':img', $this->img, PDO::PARAM_STR);
             }
@@ -185,8 +185,8 @@ class Article {
      */
     public function create($conn) {
         if ($this->validate()) {
-            $sql = "INSERT INTO news (title, headline, content, published_at)
-                    VALUES (:title, :headline, :content, :published_at)";
+            $sql = "INSERT INTO news (title, headline, content, img, published_at)
+                    VALUES (:title, :headline, :content, :img, :published_at)";
 
             $stmt = $conn->prepare($sql);
 
@@ -199,6 +199,15 @@ class Article {
             } else {
                 $stmt->bindValue(':published_at', $this->published_at, PDO::PARAM_STR);
             }
+            if ($this->img == '') {
+                $stmt->bindValue(':img', 'default.jpg', PDO::PARAM_STR);
+            } else {
+                $stmt->bindValue(':img', $this->img, PDO::PARAM_STR);
+            }
+
+
+
+
             if ($stmt->execute()) {
                 $this->id = $conn->lastInsertId();
                 return true;
