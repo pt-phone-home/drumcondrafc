@@ -19,7 +19,9 @@
 	</div>
 	<div class="form-group">
 		<label for="summernote">Article Content:</label>
-		<textarea name="content" id="summernote" cols="30" rows="20" placeholder="Type the content of your article here"><?= htmlspecialchars($article->content) ;?></textarea>
+		<textarea name="content" id="summernote$(document).ready(function() {
+  $('#summernote').summernote();
+});" cols="30" rows="20" placeholder="Type the content of your article here"><?= htmlspecialchars($article->content) ;?></textarea>
 	</div>
 	<!-- <div class="form-group">
 		<label for="published_at">Publication date and time:</label>

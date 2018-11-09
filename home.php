@@ -13,32 +13,10 @@
 	$feat_articles = Article::getPage($conn, $feat_paginator->limit, $feat_paginator->offset);
 
 	// FEATURED FIXTURE QUERY
-	$featured_fixture_sql = "SELECT *
-							FROM featured_fixture
-							ORDER BY id DESC
-							LIMIT 1";
-
-	$featured_fixture_result = $conn->query($featured_fixture_sql);
-
-	if ($featured_fixture_result === FALSE) {
-		echo $conn->errorInfo();
-	} else {
-		$feat_fixture = $featured_fixture_result->fetchAll(PDO::FETCH_ASSOC);
-	}
+	$feat_fixture = Fixture::getFeatured($conn);
 
 	// FEATURED RESULT QUERY
-	$featured_score_sql = "SELECT *
-							FROM featured_score
-							ORDER BY id DESC
-							LIMIT 1";
-		
-	$featured_score_result = $conn->query($featured_score_sql);
-
-	if ($featured_score_result === FALSE) {
-		echo $conn->errorInfo();
-	} else {
-		$feat_result = $featured_score_result->fetchAll(PDO::FETCH_ASSOC);
-	}
+	$feat_result = Result::getFeatured($conn);
 
 ?>
 

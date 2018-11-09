@@ -76,6 +76,16 @@ require 'components/init.php';
 					<h1>Add New Article</h1>
 				</a>
 			</p>
+			<p>
+				<a href="new_featured_fixture.php">
+					<h1>Add New Featured Fixture</h1>
+				</a>
+			</p>
+			<p>
+				<a href="new_featured_result.php">
+					<h1>Add New Featured result</h1>
+				</a>
+			</p>
 			<?php else: ?>
 			<p>Your are not logged in... Please Log in
 				<a href="login.php">Log In</a>

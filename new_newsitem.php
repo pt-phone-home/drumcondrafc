@@ -81,14 +81,10 @@ $article = new Article();
 
 
 	<?php include 'components/scripts.php'; ?>
-    
-	<script>
-		var quill = new Quill('#editor', {
-		theme: 'snow'
-		});
-	</script>
-    
-  
-  
+
+
+
+
 </body>
+
 </html>
