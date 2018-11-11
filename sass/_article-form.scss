@@ -12,6 +12,15 @@
     textarea {
       width: 80%;
     }
+    .wisiwyg {
+      width: 80%;
+      display: grid;
+      grid-template-columns: repeat(11, 1fr);
+
+      input {
+        border-radius: 7%;
+      }
+    }
   }
 
   button {

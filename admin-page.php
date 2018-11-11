@@ -33,9 +33,11 @@ require 'components/init.php';
 
 		<div class="admin-content">
 			<?php if (Auth::isLoggedIn()): ?>
-			<p>You are loggin.
-				<a href="logout.php">Log out</a>
-			</p>
+			<div class="admin-login">
+				<p>You are loggin.
+					<a href="logout.php">Log out</a>
+				</p>
+			</div>
 			<h2>Admin Area</h2>
 			<table>
 				<thead>
@@ -87,7 +89,7 @@ require 'components/init.php';
 				</a>
 			</p>
 			<?php else: ?>
-			<p>Your are not logged in... Please Log in
+			<p class="not-logged-in">Your are not logged in... Please
 				<a href="login.php">Log In</a>
 
 			</p>

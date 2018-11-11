@@ -9,3 +9,5 @@
 <script src="js/modal2.js"></script>
 <script src="js/sidenav.js"></script>
 <script src="js/add.js"></script>
+<!-- <script src="js/wisiwyg.js"></script> -->
+<script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>

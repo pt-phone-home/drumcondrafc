@@ -34,22 +34,24 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 		<?php include 'components/admin-header.php'; ?>
 
-		<form action="login.php" method="POST">
-			<?php if (! empty($error)) :?>
-			<p>
-				<?= $error ;?>
-			</p>
-			<?php endif; ?>
-			<div class="form-group">
-				<label for="username">Username:</label>
-				<input type="text" name="username" id="username">
-			</div>
-			<div class="form-group">
-				<label for="password">Password:</label>
-				<input type="password" id="password" name="password">
-			</div>
-			<button>Log in</button>
-		</form>
+		<div class="form-container">
+			<form action="login.php" method="POST" class="contact-form login-form">
+				<?php if (! empty($error)) :?>
+				<p>
+					<?= $error ;?>
+				</p>
+				<?php endif; ?>
+				<div class="form-group">
+					<label for="username">Username:</label>
+					<input type="text" name="username" id="username">
+				</div>
+				<div class="form-group">
+					<label for="password">Password:</label>
+					<input type="password" id="password" name="password">
+				</div>
+				<button>Log in</button>
+			</form>
+		</div>
 
 
 

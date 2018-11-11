@@ -9,3 +9,52 @@
   min-height: 60rem;
   border: 1px solid #000;
 }
+
+.not-logged-in {
+  margin: 1rem;
+  font-size: 1.7rem;
+
+  a {
+    background-color: $color-navy;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: $color-yellow;
+    text-decoration: none;
+    font-size: 1.5rem;
+    height: 110%;
+    width: 120%;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: lighten($color: $color-navy, $amount: 10%);
+      cursor: pointer;
+    }
+  }
+}
+
+.admin-login {
+  grid-column: 1 / -1;
+  margin-bottom: 1rem;
+
+  p {
+    margin: 1rem;
+    font-size: 1.7rem;
+  }
+
+  a {
+    background-color: $color-navy;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: $color-yellow;
+    text-decoration: none;
+    font-size: 1.5rem;
+    height: 110%;
+    width: 120%;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: lighten($color: $color-navy, $amount: 10%);
+      cursor: pointer;
+    }
+  }
+}

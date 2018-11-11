@@ -51,7 +51,7 @@
 				</div>
 				<div class="news-item-full-content">
 					<p>
-						<?= htmlspecialchars($article->content); ?>
+						<?= ($article->content); ?>
 					</p>
 				</div>
 				<div class="news-item-full-footer">

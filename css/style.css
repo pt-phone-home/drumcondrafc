@@ -1560,6 +1560,18 @@ body {
   background-color: #2a3075;
   color: #f9ec37; }
 
+.login-form .form-group input {
+  width: 50%; }
+
+.login-form button {
+  margin: 1rem 1rem;
+  font-size: 1.5rem;
+  display: block;
+  width: 10%;
+  height: 3.5rem;
+  background-color: #2a3075;
+  color: #f9ec37; }
+
 .news-container {
   display: grid;
   grid-template-columns: 7rem repeat(10, 1fr) 7rem;
@@ -1755,6 +1767,12 @@ body {
     width: 80%; }
   .article-form .form-group textarea {
     width: 80%; }
+  .article-form .form-group .wisiwyg {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(11, 1fr); }
+    .article-form .form-group .wisiwyg input {
+      border-radius: 7%; }
   .article-form button {
     margin: 1rem 1rem;
     font-size: 1.5rem;
@@ -1774,6 +1792,43 @@ body {
   grid-column: 2 / 12;
   min-height: 60rem;
   border: 1px solid #000; }
+
+.not-logged-in {
+  margin: 1rem;
+  font-size: 1.7rem; }
+  .not-logged-in a {
+    background-color: #2a3075;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: #f9ec37;
+    text-decoration: none;
+    font-size: 1.5rem;
+    height: 110%;
+    width: 120%;
+    text-transform: uppercase; }
+    .not-logged-in a:hover {
+      background-color: #373f9b;
+      cursor: pointer; }
+
+.admin-login {
+  grid-column: 1 / -1;
+  margin-bottom: 1rem; }
+  .admin-login p {
+    margin: 1rem;
+    font-size: 1.7rem; }
+  .admin-login a {
+    background-color: #2a3075;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: #f9ec37;
+    text-decoration: none;
+    font-size: 1.5rem;
+    height: 110%;
+    width: 120%;
+    text-transform: uppercase; }
+    .admin-login a:hover {
+      background-color: #373f9b;
+      cursor: pointer; }
 
 body {
   position: relative; }

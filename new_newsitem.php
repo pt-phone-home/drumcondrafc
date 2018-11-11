@@ -43,7 +43,7 @@ $article = new Article();
 	<title>Submit News Article - Drumcondra FC</title>
 </head>
 
-<body>
+<body onLoad="iFrameOn();">
 
 	<div class="new_newsitem-container">
 
@@ -82,7 +82,9 @@ $article = new Article();
 
 	<?php include 'components/scripts.php'; ?>
 
-
+<script>
+	CKEDITOR.replace('content');
+</script>
 
 
 </body>

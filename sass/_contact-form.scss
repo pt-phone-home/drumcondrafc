@@ -41,3 +41,21 @@
     color: $color-secondary;
   }
 }
+
+.login-form {
+  .form-group {
+    input {
+      width: 50%;
+    }
+  }
+
+  button {
+    margin: 1rem 1rem;
+    font-size: 1.5rem;
+    display: block;
+    width: 10%;
+    height: 3.5rem;
+    background-color: $color-primary;
+    color: $color-secondary;
+  }
+}
