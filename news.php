@@ -52,7 +52,7 @@
 					<?php endif; ?>
 				</div>
 				<div class="news-item-content">
-					<?= htmlspecialchars($article['content'])?>
+					<?= $article['content']?>
 				</div>
 				<div class="news-item-footer">
 					<a href="newsitem.php?id=<?= $article['id'];?>">Read More</a>

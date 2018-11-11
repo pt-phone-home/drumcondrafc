@@ -37,6 +37,19 @@
   height: auto;
   padding: 6rem;
   background-color: lighten($color: $color-primary, $amount: 65%);
+
+  @media (max-width: 1150px) {
+    grid-column: 2 / 12;
+  }
+  @media (max-width: 940px) {
+    grid-column: 1 / -1;
+  }
+  @media (max-width: 630px) {
+    padding: 4rem;
+  }
+  @media (max-width: 450px) {
+    padding: 2rem;
+  }
 }
 
 .news-item {
@@ -168,4 +181,17 @@
   height: auto;
   padding: 6rem;
   background-color: lighten($color: $color-primary, $amount: 65%);
+
+  @media (max-width: 1150px) {
+    grid-column: 2 / 12;
+  }
+  @media (max-width: 940px) {
+    grid-column: 1 / -1;
+  }
+  @media (max-width: 630px) {
+    padding: 4rem;
+  }
+  @media (max-width: 450px) {
+    padding: 2rem;
+  }
 }
