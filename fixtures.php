@@ -1,3 +1,11 @@
+<?php 
+require 'components/init.php';
+$db = new Database();
+$conn = $db->getConn();
+$fixtures = Fixture::getAll($conn);
+
+?>
+
 <html lang="en">
 
 <head>
@@ -15,8 +23,19 @@
 		<?php include 'components/header.php'; ?>
 
 		<div class="fixtures">
+			<?php foreach ($fixtures as $fix) :?>
+			<div class="card">
+				<h1>
+					<?=$fix['week_start'] ;?>
+				</h1>
 
+			</div>
 
+			<?php endforeach; ?>
+			<div class="card">
+				<h1></h1>
+
+			</div>
 
 
 

@@ -10,6 +10,8 @@
 
     public $id;
     public $date;
+    public $week_start;
+    public $fixture_list;
     public $squad;
     public $home_team;
     public $away_team;
@@ -44,5 +46,31 @@
         $stmt->bindValue(':time', $this->time, PDO::PARAM_STR);
 
         return $stmt->execute();
+    }
+
+    public function fixtureList($conn) {
+
+        $sql = "INSERT INTO fixtures (week_start, fixture_list)
+                VALUES (:week_start, :fixture_list)";
+
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bindValue(':week_start', $this->week_start, PDO::PARAM_STR);
+        $stmt->bindValue(':fixture_list', $this->fixture_list, PDO::PARAM_STR);
+
+        return $stmt->execute();
+
+    }
+
+    public static function getAll($conn) {
+
+        $sql = "SELECT * 
+                FROM fixtures
+                ORDER BY id DESC
+                LIMIT 10";
+
+        $fixtures = $conn->query($sql);
+
+        return $fixtures->fetchAll(PDO::FETCH_ASSOC);
     }
  }

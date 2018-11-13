@@ -85,7 +85,7 @@ require 'components/init.php';
 			<div class="admin-area-fixtures">
 				<h2 class="admin-area-fixtures-heading">Fixtures & Results</h2>
 				<p class="admin-area-fixtures-fixtures">
-					<a href="#!">
+					<a href="new_fixtures.php">
 						<h1>Add Weeks Fixtures</h1>
 					</a>
 				</p>

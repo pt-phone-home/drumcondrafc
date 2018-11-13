@@ -1037,10 +1037,15 @@ body {
   grid-template-rows: auto; }
 
 .fixtures {
-  grid-column: 2 / 12;
+  grid-column: 3 / 11;
   border: 1px solid #000;
   height: 30rem;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem; }
 
 .gallery-container {
   display: grid;
