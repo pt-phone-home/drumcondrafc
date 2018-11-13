@@ -28,6 +28,7 @@ $fixtures = Fixture::getAll($conn);
 				<h1>
 					<?=$fix['week_start'] ;?>
 				</h1>
+				<p>Click on the link above for a list of fixtures</p>
 
 			</div>
 
