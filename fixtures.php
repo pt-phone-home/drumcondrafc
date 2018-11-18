@@ -21,22 +21,27 @@ $fixtures = Fixture::getAll($conn);
 		<?php include 'components/banner.php'; ?>
 
 		<?php include 'components/header.php'; ?>
+		<div class="news-header">
+			<h1>Fixture List</h1>
+			<i class="fas fa-newspaper"></i>
+
+		</div>
 
 		<div class="fixtures">
 			<?php foreach ($fixtures as $fix) :?>
-			<div class="card">
-				<h1>
-					<?=$fix['week_start'] ;?>
-				</h1>
-				<p>Click on the link above for a list of fixtures</p>
+			<div class="fixture_card">
+				<h3>Week Beginning :</h3>
+				<a href="fixtureitem.php?id=<?=$fix['id']; ?>">
+					<h1>
+						<?=$fix['week_start'] ;?>
+					</h1>
+				</a>
+				<p>Click for a list of fixtures</p>
 
 			</div>
 
 			<?php endforeach; ?>
-			<div class="card">
-				<h1></h1>
 
-			</div>
 
 
 

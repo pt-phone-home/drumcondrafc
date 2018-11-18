@@ -1038,14 +1038,21 @@ body {
 
 .fixtures {
   grid-column: 3 / 11;
-  border: 1px solid #000;
-  height: 30rem;
+  min-height: 50rem;
   margin-bottom: 1rem;
   padding: 2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 2rem;
   grid-row-gap: 1rem; }
+  .fixtures h1 {
+    margin-bottom: 1rem; }
+
+.fixture_card {
+  height: 10rem;
+  padding: 0.5rem 0.5rem;
+  box-shadow: 6px 6px 5px -2px rgba(0, 0, 0, 0.18);
+  text-align: center; }
 
 .gallery-container {
   display: grid;

@@ -37,7 +37,7 @@ require 'components/init.php';
 		<div class="admin-content">
 			<?php if (Auth::isLoggedIn()): ?>
 			<div class="admin-login">
-				<p>You are loggin.
+				<p>You are logged in.
 					<a href="logout.php">Log out</a>
 				</p>
 			</div>

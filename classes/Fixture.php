@@ -73,4 +73,19 @@
 
         return $fixtures->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public static function getByID($conn, $id, $columns = '*') {
+        $sql = "SELECT $columns
+                FROM fixtures
+                WHERE id = :id";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'Fixture');
+
+        if ($stmt->execute()) {
+            return $stmt->fetch();
+        }
+        
+    }
  }
