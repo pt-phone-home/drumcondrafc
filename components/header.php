@@ -27,7 +27,7 @@
 
 	<div class="nav2">
 		<li>
-			<a href="#">Results</a>
+			<a href="results.php">Results</a>
 		</li>
 		<li>
 			<a href="members.php">Members</a>

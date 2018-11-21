@@ -10,6 +10,8 @@
 
     public $id;
     public $date;
+    public $week_start;
+    public $result_list;
     public $squad;
     public $home_team;
     public $away_team;
@@ -45,5 +47,32 @@
         
 
         return $stmt->execute();
+    }
+
+    public static function getAll($conn) {
+
+        $sql = "SELECT * 
+                FROM results
+                ORDER BY id DESC
+                LIMIT 10";
+
+        $results = $conn->query($sql);
+
+        return $results->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public static function getByID($conn, $id, $columns = '*') {
+        $sql = "SELECT $columns
+                FROM results
+                WHERE id = :id";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'Fixture');
+
+        if ($stmt->execute()) {
+            return $stmt->fetch();
+        }
+        
     }
  }
