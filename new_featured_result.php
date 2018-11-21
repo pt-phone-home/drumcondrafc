@@ -31,7 +31,7 @@ $feat_result = new Result();
 <head>
 	<?php include 'components/head.php';
     ?>
-	<title>Featured Fixture - Drumcondra FC</title>
+	<title>Featured Result - Drumcondra FC</title>
 </head>
 
 <body>

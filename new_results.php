@@ -3,18 +3,18 @@
 
 	Auth::requireLogin();
 
-$fixture = new Fixture();
+$result = new Result();
 
  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // Capture Text data from Form
 	$conn = require 'components/db.php';
 
-    $fixture->week_start = $_POST['date'];
-    $fixture->fixture_list = $_POST['content'];
+    $result->week_start = $_POST['date'];
+    $result->result_list = $_POST['content'];
 
     
-		if ($fixture->fixtureList($conn)) {
-			Url::redirect("/drumcondrafc/fixtures.php");
+		if ($result->resultList($conn)) {
+			Url::redirect("/drumcondrafc/results.php");
 		}
 			
 
@@ -28,7 +28,7 @@ $fixture = new Fixture();
 <head>
 	<?php include 'components/head.php';
     ?>
-	<title>Fixtures - Drumcondra FC</title>
+	<title>Submit Results - Drumcondra FC</title>
 </head>
 
 <body onLoad="iFrameOn();">
@@ -40,12 +40,12 @@ $fixture = new Fixture();
 		<?php include 'components/admin-header.php'; ?>
 
 		<section class="new_newsitem-intro">
-			<h1>Add list of weekly fixtures</h1>
+			<h1>Add list of weekly results</h1>
 		</section>
 		<section class="form-container">
 
 
-			<?php include 'components/fixture-form.php';?>
+			<?php include 'components/result-form.php';?>
 
 		</section>
 

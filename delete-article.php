@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
 	<?php include 'components/head.php';
     ?>
-	<title>Submit News Article - Drumcondra FC</title>
+	<title>News Article - Drumcondra FC</title>
 </head>
 
 <body>

@@ -51,7 +51,7 @@
 					</p>
 				</div>
 				<div class="news-item-full-footer">
-					<a href="fixtures.php">Back to Results</a>
+					<a href="results.php">Back to Results</a>
 				</div>
 			</div>
 

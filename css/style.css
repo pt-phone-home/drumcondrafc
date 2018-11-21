@@ -1038,13 +1038,25 @@ body {
 
 .fixtures {
   grid-column: 3 / 11;
-  min-height: 50rem;
+  min-height: 30rem;
   margin-bottom: 1rem;
   padding: 2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 2rem;
-  grid-row-gap: 1rem; }
+  grid-row-gap: 0.2rem; }
+  @media (max-width: 1150px) {
+    .fixtures {
+      grid-column: 2 / 12; } }
+  @media (max-width: 940px) {
+    .fixtures {
+      grid-column: 1 / -1; } }
+  @media (max-width: 630px) {
+    .fixtures {
+      padding: 4rem; } }
+  @media (max-width: 450px) {
+    .fixtures {
+      padding: 2rem; } }
   .fixtures h1 {
     margin-bottom: 1rem; }
 
@@ -1052,7 +1064,10 @@ body {
   height: 10rem;
   padding: 0.5rem 0.5rem;
   box-shadow: 6px 6px 5px -2px rgba(0, 0, 0, 0.18);
-  text-align: center; }
+  text-align: center;
+  border: 1px solid #2a3075;
+  display: grid;
+  align-items: center; }
 
 .gallery-container {
   display: grid;

@@ -90,7 +90,7 @@ require 'components/init.php';
 					</a>
 				</p>
 				<p class="admin-area-fixtures-results">
-					<a href="#!">
+					<a href="new_results.php">
 						<h1>Add Weeks Results</h1>
 					</a>
 				</p>

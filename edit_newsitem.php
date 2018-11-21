@@ -69,9 +69,8 @@ if ($_SERVER['REQUEST_METHOD']== 'POST') {
 	</div>
 	<?php include 'components/scripts.php'; ?>
     <script>
-
-    
-    </script>
+	CKEDITOR.replace('content');
+</script>
   
 </body>
 </html>

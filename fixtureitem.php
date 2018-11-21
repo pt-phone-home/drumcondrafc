@@ -22,7 +22,7 @@
 <head>
 	<?php include 'components/head.php';
     ?>
-	<title>News - Drumcondra FC</title>
+	<title>Fixtures - Drumcondra FC</title>
 </head>
 
 <body>

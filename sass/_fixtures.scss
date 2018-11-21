@@ -6,14 +6,27 @@
 
 .fixtures {
   grid-column: 3 / 11;
-  min-height: 50rem;
+  min-height: 30rem;
   margin-bottom: 1rem;
   padding: 2rem;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 2rem;
-  grid-row-gap: 1rem;
+  grid-row-gap: 0.2rem;
+
+  @media (max-width: 1150px) {
+    grid-column: 2 / 12;
+  }
+  @media (max-width: 940px) {
+    grid-column: 1 / -1;
+  }
+  @media (max-width: 630px) {
+    padding: 4rem;
+  }
+  @media (max-width: 450px) {
+    padding: 2rem;
+  }
 
   h1 {
     margin-bottom: 1rem;
@@ -25,4 +38,7 @@
   padding: 0.5rem 0.5rem;
   box-shadow: $box-shadow-light;
   text-align: center;
+  border: 1px solid $color-primary;
+  display: grid;
+  align-items: center;
 }

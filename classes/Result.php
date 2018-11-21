@@ -49,6 +49,20 @@
         return $stmt->execute();
     }
 
+    public function resultList($conn) {
+
+        $sql = "INSERT INTO results (week_start, result_list)
+                VALUES (:week_start, :result_list)";
+
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bindValue(':week_start', $this->week_start, PDO::PARAM_STR);
+        $stmt->bindValue(':result_list', $this->result_list, PDO::PARAM_STR);
+
+        return $stmt->execute();
+
+    }
+
     public static function getAll($conn) {
 
         $sql = "SELECT * 

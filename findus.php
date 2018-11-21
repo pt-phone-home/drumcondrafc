@@ -3,7 +3,7 @@
 <head>
 	<?php include 'components/head.php';
     ?>
-	<title>Welcome To Drumcondra FC: One Club - One Community</title>
+	<title>Find Us </title>
 </head>
 
 <body>
