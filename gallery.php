@@ -40,26 +40,28 @@
 					<img src="img/gallery/img8.jpg">
 					<img src="img/gallery/img9.jpg">
 					<img src="img/gallery/img10.jpg">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
-					<img src="http://placehold.it/200x200">
+					<img src="img/gallery/img11.jpg">
+					<img src="img/gallery/img13.jpg">
+					<img src="img/gallery/img14.jpg">
+					<img src="img/gallery/img15.jpg">
+					<img src="img/gallery/img16.jpg">
+					<img src="img/gallery/img17.jpg">
+					<img src="img/gallery/img18.jpg">
+					<img src="img/gallery/img19.jpg">
+					<img src="img/gallery/img20.jpg">
+					<img src="img/gallery/img21.jpg">
+					<img src="img/gallery/img22.jpg">
+					<img src="img/gallery/img23.jpg">
+					<img src="img/gallery/img24.jpg">
+					<img src="img/gallery/img25.jpg">
+					<img src="img/gallery/img26.jpg">
+					<img src="img/gallery/img27.jpg">
+					<img src="img/gallery/img29.jpg">
+					<img src="img/gallery/img30.jpg">
+					<img src="img/gallery/img32.jpg">
+
+
+
 				</div>
 
 			</div>

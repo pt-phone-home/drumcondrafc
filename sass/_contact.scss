@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 7rem repeat(10, 1fr) 7rem;
   grid-template-rows: auto;
+  background-color: lighten($color: lightgrey, $amount: 15%);
 }
 
 .contact-header {

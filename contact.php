@@ -246,14 +246,14 @@ $headers = 'From: '.$email_from."\r\n".
 				<h1>Contact Details</h1>
 				<div class="member">
 					<div class="member-pic">
-						<img src="http://placehold.it/100x100" class="avatar-lg" alt="">
+						<img src="img/frank_connolly.png" class="avatar-lg" alt="">
 					</div>
 					<h3>Frank Conolly</h3>
 					<h3> 086 833 1909</h3>
 				</div>
 				<div class="member">
 					<div class="member-pic">
-						<img src="http://placehold.it/100x100" class="avatar-lg" alt="">
+						<img src="img/brian_martin.png" class="avatar-lg" alt="">
 					</div>
 					<h3>Brian Martin</h3>
 					<h3> 087 744 3583</h3>

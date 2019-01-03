@@ -7,7 +7,9 @@
 .about-header {
   grid-column: 1 / -1;
   grid-row: 3 / 4;
-  background: url("http://placehold.it/500x500");
+  background-image: url("../img/drums_banner.png");
+  background-size: cover;
+  background-position: center;
   height: 50rem;
   position: relative;
 
@@ -21,9 +23,9 @@
   h1 {
     position: absolute;
     top: 10rem;
-    left: 3rem;
+    right: 3rem;
     font-size: 7rem;
-    color: $color-navy;
+    color: $color-secondary;
 
     @media (max-width: 1070px) {
       font-size: 6rem;

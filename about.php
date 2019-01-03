@@ -15,7 +15,7 @@
 		<?php include 'components/header.php'; ?>
 
 		<section class="about-header">
-			<h1>Drums in Drumcondra</h1>
+			<!-- <h1>Drums in Drumcondra</h1> -->
 		</section>
 
 		<section class="about-info">
